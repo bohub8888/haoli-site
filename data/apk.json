@@ -1,9 +1,9 @@
 {
-  "version": "1.12",
-  "versionCode": 13,
-  "size": 788862,
-  "sha256": "8c5c2d4ecda13179b5cd79aec1c9284613dc92d8be4017790793557626397782",
-  "url": "https://49.233.147.15/download/haoli-1.12.apk",
+  "version": "1.13",
+  "versionCode": 14,
+  "size": 820202,
+  "sha256": "50541926db757336618a2c09ae54272f4285598ba606155a8b970a72bccffa07",
+  "url": "https://49.233.147.15/download/haoli-1.13.apk",
   "pgyer": "https://www.pgyer.com/haoli-android",
-  "notes": "升级判断修正：官网为准、蒲公英兜底，版本号按 1.12>1.9 逐段比较，兜底源不再误报已是最新"
+  "notes": "新增「联系作者」：公众号蚝历四季（复制微信号 / 打开微信 / 保存二维码扫码关注）"
 }
