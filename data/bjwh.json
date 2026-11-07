@@ -1,9 +1,9 @@
 {
-  "version": "3.4",
-  "versionCode": 16,
-  "size": 1130789,
-  "sha256": "53a4369a60c68a7bd8f04221b5c36d5ace446c2bbcd7f85626d0b38db6c66e35",
-  "url": "https://49.233.147.15/download/bjwh-3.4.apk",
+  "version": "3.5",
+  "versionCode": 17,
+  "size": 1130269,
+  "sha256": "a73aaca5d8d1e00757a767541668d9a6787a783fb6f281c657b4f2381d4ac8c0",
+  "url": "https://49.233.147.15/download/bjwh-3.5.apk",
   "pgyer": "https://www.pgyer.com/bjwhxx-android",
-  "notes": "4×2 分隔线贯通整卡、2×1 胶囊高度与蚝历一致、应用内直接升级"
+  "notes": "升级判断修正：官网为准、蒲公英兜底，版本号逐段比较，兜底源不再误报已是最新"
 }
