@@ -28,9 +28,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
 .yearnav .yn{display:inline-flex;align-items:center;gap:2px;font-size:12.5px;font-weight:600;color:#6e6e73;background:#fff;border:1px solid #eaeaef;border-radius:999px;padding:4px 11px;text-decoration:none;transition:color .15s,border-color .15s,transform .15s;font-variant-numeric:tabular-nums}
 .yearnav .yn:hover{color:#ff6b35;border-color:#ffd6c6;transform:translateY(-1px)}
 
-/* hero：左侧标题 + 右侧限行 banner */
+/* hero：左侧标题 + 右侧两个 App 入口（限行 / 蚝历），竖排叠放 */
 .hero{display:flex;align-items:center;gap:10px 12px;flex-wrap:wrap}
 .hero-main{flex:1 1 0;min-width:0}
+.hero-aside{flex:0 0 auto;display:flex;flex-direction:column;gap:6px}
 .hero h1{font-size:25px;font-weight:800;letter-spacing:-0.02em;margin-bottom:6px;line-height:1.25}
 .hero p{font-size:13px;color:#6e6e73;line-height:1.45}
 .hero-banner{flex:0 0 auto;display:flex;align-items:center;gap:8px;background:#fff;border-radius:12px;padding:8px 12px 8px 8px;text-decoration:none;color:inherit;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #eaeaef;transition:transform .15s,box-shadow .15s}
@@ -89,6 +90,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
 
 @media (max-width:400px){
   .hero h1{font-size:21px}
+  .hero-aside{flex-direction:row;width:100%;gap:6px}
+  .hero-aside .hero-banner{flex:1 1 0;min-width:0}
   .hero-banner{padding:6px 9px 6px 6px;gap:6px}
   .hero-banner .hb-icon{width:26px;height:26px;border-radius:7px}
   .hero-banner .hb-text b{font-size:10.5px}
@@ -113,6 +116,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
       <h1>2026 年节假日日历</h1>
       <p>中国 + 全球 62 国 · 导入手机日历，或订阅自动更新</p>
     </div>
+    <div class="hero-aside">
     <a class="hero-banner" href="https://www.pgyer.com/bjwhxx-android" target="_blank" rel="noopener">
       <svg class="hb-icon" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path fill="#101820" d="M24,0 L84,0 A24,24 0 0 1 108,24 L108,84 A24,24 0 0 1 84,108 L24,108 A24,24 0 0 1 0,84 L0,24 A24,24 0 0 1 24,0 Z"/>
@@ -125,19 +129,17 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
         <small>查明天限几号 →</small>
       </span>
     </a>
+    <a class="hero-banner" id="app" href="https://49.233.147.15/download/haoli-1.1.apk" download>
+      <img class="hb-icon" src="../oyster-logo.png" alt="蚝历">
+      <span class="hb-text">
+        <b>蚝历<span class="hb-tag">App</span></b>
+        <small>桌面小组件 · 717 KB</small>
+      </span>
+    </a>
+    </div>
   </div>
 
   <p class="hint"><b>导入</b>＝一次性快照，明年要再点一次；<b>订阅</b>＝自动更新，以后我改数据你手机上跟着变。订阅在 iPhone / iPad / Mac / Outlook 上直接生效，安卓需在日历里「通过网址添加」（长按订阅链接可复制）。</p>
-
-  <!-- 安卓 App：小组件 + 跨年数据 -->
-  <div class="section" id="app">
-    <div class="section-title">安卓 App</div>
-    <div class="panel">
-      <p><strong>蚝历 1.0</strong> <span class="count">717 KB</span>　桌面小组件 4×2 / 2×2 / 2×1，内置 2026–2030 五年数据，跨年不用管，放假安排公布后自动更新。</p>
-      <p class="hint">装好后长按桌面 → 小组件 → 蚝历，挑一个尺寸拖出来即可。</p>
-      <a class="btn primary" href="https://49.233.147.15/download/haoli-1.0.apk" download>下载 APK · 717 KB</a>
-    </div>
-  </div>
 
   <!-- 中国：主推 -->
   <div class="section">
@@ -706,6 +708,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
       <details><summary>以前导入的那一批怎么清掉？</summary><p>三星日历：设置 → 日历 → 长按「我的日历」→ 删除日历，它下面的所有日程一起消失（如果你的个人日程也在这一组，先别删，见下条）。Google 日历：网页版设置 → 选该日历 → 删除。想只删节假日、保留自己的日程：在日历里搜索「春节」「立冬」等节日名，长按进入多选后批量删除，或直接改用订阅，再把旧的那组整组删掉。</p></details>
       <details><summary>导入后会把原来的日程覆盖掉吗？</summary><p>不会。导入只是往你现有日历里「加一份」，已有日程不受影响。反过来，如果你想撤掉，删掉这个日历分组就行。</p></details>
       <details><summary>日历会提醒我吗？</summary><p>法定假日和春节、端午、中秋会带一条当天上午的提醒。其他纪念日、节气不提醒，避免打扰。</p></details>
+      <details><summary>安卓 App 怎么装？桌面小组件怎么加？</summary><p>点页面右上角的「蚝历 App」下载 APK（2026 版约 700 KB，不需要 Google Play）。装好后长按桌面空白处 →「小组件」→ 找到「蚝历」→ 选 4×2 / 2×2 / 2×1 拖到桌面即可。App 里内置 2026–2030 五年数据，跨年不用管；国务院公布次年放假安排后，App 会自动下载新数据，不用重新装。小组件每天零点自己翻到今天，「下一个节点」按最近的一条算——假期、节气、传统节日、纪念日一视同仁，谁最近显示谁。</p></details>
       <details><summary>数据准确吗？来源是什么？</summary><p>中国内地依据国务院办公厅《关于 2026 年部分节假日安排的通知》，2025 年 11 月 4 日发布；农历节日与 24 节气按天文历法计算。中国香港、中国澳门按当地政府公布的公众假期，中国台湾按行政院人事行政总处办公日历表。海外 62 国由开源假日库 holidays 按 2026 年当地规则计算，名称已译为中文；个别伊斯兰节日按天文推算，可能与当地最终公布相差一天，出行前请以当地官方为准。</p></details>
     </div>
   </div>
