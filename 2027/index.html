@@ -88,6 +88,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
 .footer p{font-size:12px;color:#8e8e93;margin-bottom:4px}
 .footer a{color:#8e8e93;text-decoration:none}
 .footer a:hover{color:#ff6b35}
+.contact{background:#fff;border-radius:14px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,.05);display:flex;align-items:center;gap:16px}
+.contact img{width:118px;height:118px;border-radius:10px;flex:0 0 auto;display:block}
+.contact .c-text{min-width:0;flex:1}
+.contact .c-name{font-size:16px;font-weight:700;line-height:1.3}
+.contact .c-name small{font-size:11px;font-weight:600;color:#8e8e93;margin-left:6px}
+.contact .c-sub{font-size:12.5px;color:#6e6e73;margin-top:3px}
+.contact .c-tip{font-size:11.5px;color:#8e8e93;margin-top:7px;line-height:1.65}
+.contact .c-tip b{color:#ff6b35;font-weight:600}
 
 @media (max-width:400px){
   .hero h1{font-size:21px}
@@ -119,7 +127,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
       <p>中国 + 全球 62 国 · 导入手机日历，或订阅自动更新</p>
     </div>
     <div class="hero-aside">
-    <a class="hero-banner" href="https://49.233.147.15/download/bjwh-3.5.apk" download>
+    <a class="hero-banner" href="https://49.233.147.15/download/bjwh-3.6.apk" download>
       <svg class="hb-icon" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path fill="#101820" d="M24,0 L84,0 A24,24 0 0 1 108,24 L108,84 A24,24 0 0 1 84,108 L24,108 A24,24 0 0 1 0,84 L0,24 A24,24 0 0 1 24,0 Z"/>
         <path fill="none" stroke="#FF6B57" stroke-width="8" d="M54,28 A26,26 0 1 0 54.01,28 Z"/>
@@ -127,14 +135,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
         <path fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" d="M46,46 A9,9 0 1 0 55,55 L55,58"/>
       </svg>
       <span class="hb-text">
-        <b>北京尾号限行<span class="hb-tag">App</span><span class="hb-ver">v3.5</span></b>
+        <b>北京尾号限行<span class="hb-tag">App</span><span class="hb-ver">v3.6</span></b>
         <small>查明天限几号 →</small>
       </span>
     </a>
-    <a class="hero-banner" id="app" href="https://49.233.147.15/download/haoli-1.12.apk" download>
+    <a class="hero-banner" id="app" href="https://49.233.147.15/download/haoli-1.13.apk" download>
       <img class="hb-icon" src="../oyster-logo.png" alt="蚝历">
       <span class="hb-text">
-        <b>蚝历<span class="hb-tag">App</span><span class="hb-ver">v1.12</span></b>
+        <b>蚝历<span class="hb-tag">App</span><span class="hb-ver">v1.13</span></b>
         <small>桌面小组件 · 770 KB</small>
       </span>
     </a>
@@ -724,6 +732,20 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
       <details><summary>日历会提醒我吗？</summary><p>法定假日和春节、端午、中秋会带一条当天上午的提醒。其他纪念日、节气不提醒，避免打扰。</p></details>
       <details><summary>安卓 App 怎么装？桌面小组件怎么加？</summary><p>点页面右上角的「蚝历 App」下载 APK（2027 版约 700 KB，不需要 Google Play）。装好后长按桌面空白处 →「小组件」→ 找到「蚝历」→ 选 4×2 / 2×2 / 2×1 拖到桌面即可。App 里内置 2026–2030 五年数据，跨年不用管；国务院公布次年放假安排后，App 会自动下载新数据，不用重新装。小组件每天零点自己翻到今天，「下一个节点」按最近的一条算——假期、节气、传统节日、纪念日一视同仁，谁最近显示谁。</p></details>
       <details><summary>数据准确吗？来源是什么？</summary><p>中国内地依据国务院办公厅《关于 2027 年部分节假日安排的通知》（国办发明电〔2026〕10 号）；农历节日与 24 节气按天文历法计算。中国香港、中国澳门按当地政府公布的公众假期，中国台湾按行政院人事行政总处办公日历表。海外 62 国由开源假日库 holidays 按 2027 年当地规则计算，名称已译为中文；个别伊斯兰节日按天文推算，可能与当地最终公布相差一天，出行前请以当地官方为准。</p></details>
+    </div>
+  </div>
+
+  <!-- 联系作者：微信公众号「蚝历四季」。
+       微信内打开本页可长按二维码识别直达关注页；外部浏览器引导扫码或搜一搜。 -->
+  <div class="section" id="contact">
+    <div class="section-title">联系作者</div>
+    <div class="contact">
+      <img src="../wx-qr.jpg" alt="微信公众号「蚝历四季」二维码，微信扫码或长按识别关注" loading="lazy">
+      <div class="c-text">
+        <div class="c-name">蚝历四季<small>微信公众号</small></div>
+        <div class="c-sub">微信号 ystercal <button type="button" class="cpy" data-copy="ystercal">复制</button></div>
+        <p class="c-tip">反馈、数据纠错、新功能建议都在这里。微信内打开本页可<b>长按二维码识别关注</b>；其他环境请扫码，或微信搜一搜「蚝历四季」。</p>
+      </div>
     </div>
   </div>
 
