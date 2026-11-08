@@ -1,9 +1,0 @@
-{
-  "version": "1.14",
-  "versionCode": 15,
-  "size": 821158,
-  "sha256": "8af0a8849f9aafab77b77ffe27013e6636d131784be0da3db3ccf00bf1e7b44a",
-  "url": "https://49.233.147.15/download/haoli-1.14.apk",
-  "pgyer": "https://www.pgyer.com/haoli-android",
-  "notes": "导入/订阅日历的年份跟系统时间走（跨年自动切 2027，缺次年文件自动退一年），标题年份不再依赖网络；其余同 1.13"
-}
