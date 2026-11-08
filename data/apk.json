@@ -1,0 +1,9 @@
+{
+  "version": "1.15",
+  "versionCode": 16,
+  "size": 822802,
+  "sha256": "e91c7754424aecc2c1e42a0eb2f7cf84edc86fbd47086e46fa99cd0d03054e34",
+  "url": "https://49.233.147.15/download/haoli-1.15.apk",
+  "pgyer": "https://www.pgyer.com/haoli-android",
+  "notes": "小组件跨零点刷新修复：系统每 30 分钟兜底重绘 + 零点精确闹钟加固 + 进程启动自愈 + 电池白名单引导（受限时首页提示）"
+}
