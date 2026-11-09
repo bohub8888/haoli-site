@@ -1,9 +1,9 @@
 {
-  "version": "1.22",
-  "versionCode": 23,
-  "size": 846906,
-  "sha256": "501400994c1e103eeffbc7cb6e0e95cc4c4921d7ccf577667ab674cad6ff4a75",
-  "url": "https://49.233.147.15/download/haoli-1.22.apk",
+  "version": "1.23",
+  "versionCode": 24,
+  "size": 853102,
+  "sha256": "91ae3754d17af5dd02f41a234587b30e231fbac4fb8a86b6de898229f5e49b71",
+  "url": "https://49.233.147.15/download/haoli-1.23.apk",
   "pgyer": "https://www.pgyer.com/haoli-android",
-  "notes": "2×2 / 4×2 把当天与下一个日期的全部节日都列出来（❶❷❸ 序号，当天竖排、下一个横排），不再出现「+N」；两边同一字号；条目多时让出农历/日期行，绝不裁名字"
+  "notes": "2×2 / 4×2 重排版：去掉❶❷❸序号，改为「书脊式名单」——一条一行、左轴对齐，多条时左侧起一道渐变书脊；下一个日期的字号是今天的主块×0.62；条目多时自动切紧凑排法（倒计时并入眉头），字号比上一版普遍大一档，名字仍然一条不藏"
 }
