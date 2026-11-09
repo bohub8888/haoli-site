@@ -1,9 +1,9 @@
 {
-  "version": "1.16",
-  "versionCode": 17,
-  "size": 830746,
-  "sha256": "cc28a17d46e2c9dd21712a3a711bb59af6afe5704a1d526d0a222ece987239a1",
-  "url": "https://49.233.147.15/download/haoli-1.16.apk",
+  "version": "1.17",
+  "versionCode": 18,
+  "size": 831214,
+  "sha256": "e021af7f031733a0b934a402b6b0620600cfa9f455f0902248f17431b9f5b3b4",
+  "url": "https://49.233.147.15/download/haoli-1.17.apk",
   "pgyer": "https://www.pgyer.com/haoli-android",
-  "notes": "节日库扩容：新增纪念日/宣传日/国际日 100 余条，119 全国消防日、110 警察节、国家公祭日等补齐；同一天多个节日不再互相顶掉，App 里新增「今天还有」一行"
+  "notes": "同一天有多个节日时不再只显示一条：2×1 副行、2×2 副行、4×2 农历行都会写「还有谁」，例如 11 月 9 日同时显示全国消防日与寒衣节"
 }
