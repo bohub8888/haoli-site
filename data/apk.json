@@ -1,9 +1,9 @@
 {
-  "version": "1.24",
-  "versionCode": 25,
-  "size": 853398,
-  "sha256": "a99ad2a928b898d8f93775878c1f9f8e6312f77a3aea7c4dbca46451b8845dcb",
-  "url": "https://49.233.147.15/download/haoli-1.24.apk",
+  "version": "1.25",
+  "versionCode": 26,
+  "size": 853534,
+  "sha256": "480f5bff5a95038f67d23e9a17ccba2566d88c4a906193bb02c442f16c4430e5",
+  "url": "https://49.233.147.15/download/haoli-1.25.apk",
   "pgyer": "https://www.pgyer.com/haoli-android",
-  "notes": "修 2×2 今天名单不显示的 bug；4×2 右侧假日文字与左侧同字号；同日多个节日从第二条起带小号「也是」前缀，交代这些名字为什么挤在同一天"
+  "notes": "2×2 通栏分隔线永远可见（贯穿到卡片边缘，一分为二）；4×2 左右两栏名字顶边对齐；2×1 的「还有」改成「也是」；添加小组件界面的预览同步到最新设计"
 }
