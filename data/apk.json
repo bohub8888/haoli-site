@@ -1,9 +1,9 @@
 {
-  "version": "1.19",
-  "versionCode": 20,
-  "size": 837690,
-  "sha256": "fe5af29b00cf7e62bf9ccb00534fb3ab52021964535bc44675d21b206f8394da",
-  "url": "https://49.233.147.15/download/haoli-1.19.apk",
+  "version": "1.20",
+  "versionCode": 21,
+  "size": 838174,
+  "sha256": "fddd61f7e5a06cf6be4efc9ec6da292b6628d7208a1a0bd00507bf8f3a6c1dde",
+  "url": "https://49.233.147.15/download/haoli-1.20.apk",
   "pgyer": "https://www.pgyer.com/haoli-android",
-  "notes": "数据大补：节日/纪念日/国际日 134→204 条（新增双十一、618、双十二、520、开学日、丰收节、抗美援朝纪念日等）；中国专属纪念日同步进全球日历；新增四出口一致性自动校验"
+  "notes": "小组件排版：2×1 窄格字号地板 14→13.5dp（4 字名不再被截成「世界…」，截字率 25.9%→0.6%）；补 12 条四字短名；4×2 遗产日不再截字；同日 3 个以上补「+N」；「等N个」按真实条数"
 }
