@@ -1,9 +1,9 @@
 {
-  "version": "1.20",
-  "versionCode": 21,
-  "size": 838174,
-  "sha256": "fddd61f7e5a06cf6be4efc9ec6da292b6628d7208a1a0bd00507bf8f3a6c1dde",
-  "url": "https://49.233.147.15/download/haoli-1.20.apk",
+  "version": "1.21",
+  "versionCode": 22,
+  "size": 841150,
+  "sha256": "ced5c668dc930de3e0e0f9530e240c471253e9a24009f11aad69d7f8ac48c9b1",
+  "url": "https://49.233.147.15/download/haoli-1.21.apk",
   "pgyer": "https://www.pgyer.com/haoli-android",
-  "notes": "小组件排版：2×1 窄格字号地板 14→13.5dp（4 字名不再被截成「世界…」，截字率 25.9%→0.6%）；补 12 条四字短名；4×2 遗产日不再截字；同日 3 个以上补「+N」；「等N个」按真实条数"
+  "notes": "小组件全面改全名：2×1 只显示今天（限行式），整条 120dp 给一个名字；2×2 倒计时移到标签行，名字独占一行；4×2 新增「还有 X +N」独立行；下一个日期撞车时补「+N」"
 }
