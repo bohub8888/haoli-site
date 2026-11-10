@@ -184,6 +184,21 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
     </div>
   </div>
 
+  <!-- 月视图：仿三星日历的月份网格，全球合并数据，点某天看当日全部节日 -->
+  <div class="section" id="monthview">
+    <div class="section-title">月视图 · 每天的节日一目了然</div>
+    <div class="panel mcal">
+      <div class="mhead">
+        <button type="button" id="mPrev" class="mnav" aria-label="上个月">‹</button>
+        <div class="mtitle" id="mTitle">加载中…</div>
+        <button type="button" id="mNext" class="mnav" aria-label="下个月">›</button>
+      </div>
+      <div class="mgrid mweek"><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span class="sat">六</span><span class="sun">日</span></div>
+      <div class="mgrid" id="mGrid"></div>
+      <p class="mtip"><b>橙圈</b>是今天 · 点任意一天看当天全部节日（含国家/地区明细）</p>
+    </div>
+  </div>
+
   <p class="hint"><b>导入</b>＝一次性快照（覆盖 2026–2027 全部年度，数据更新后再点一次就是刷新）；<b>订阅</b>＝自动更新，以后我改数据你手机上跟着变。订阅在 iPhone / iPad / Mac / Outlook 上直接生效，安卓推荐直接装「蚝历 App」一键导入。</p>
 
   <!-- 中国：主推 -->
@@ -722,21 +737,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
         <a class="btn secondary" href="ics/ng.ics" download>导入手机日历</a>
         <div class="subrow"><a class="sub" href="webcal://49.233.147.15/ics/ng.ics">订阅 · 自动更新</a><button type="button" class="cpy" data-copy="https://49.233.147.15/ics/ng.ics">复制地址</button></div>
       </div>
-    </div>
-  </div>
-
-  <!-- 月视图：仿三星日历的月份网格，全球合并数据，点某天看当日全部节日 -->
-  <div class="section" id="monthview">
-    <div class="section-title">月视图 · 每天的节日一目了然</div>
-    <div class="panel mcal">
-      <div class="mhead">
-        <button type="button" id="mPrev" class="mnav" aria-label="上个月">‹</button>
-        <div class="mtitle" id="mTitle">加载中…</div>
-        <button type="button" id="mNext" class="mnav" aria-label="下个月">›</button>
-      </div>
-      <div class="mgrid mweek"><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span class="sat">六</span><span class="sun">日</span></div>
-      <div class="mgrid" id="mGrid"></div>
-      <p class="mtip"><b>橙圈</b>是今天 · 点任意一天看当天全部节日（含国家/地区明细）</p>
     </div>
   </div>
 
