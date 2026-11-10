@@ -728,6 +728,21 @@ def build_year(y: int) -> tuple[dict, dict]:
         f"同一天同一节日合并为一条，描述内列出国家和地区",
     )
 
+    # 月视图数据源：把全球大全（含中国，同日同名已合并）展开成逐日 JSON，
+    # 供网页月历（仿三星日历月视图）加载。跨天假期按天展开，每天都能看到。
+    day_rows: list[dict] = []
+    for e in glob:
+        d = e.start
+        while d < e.end:
+            row = {"d": d.isoformat(), "t": e.summary}
+            if e.desc:
+                row["x"] = e.desc
+            day_rows.append(row)
+            d += dt.timedelta(days=1)
+    day_rows.sort(key=lambda r: (r["d"], r["t"]))
+    with open(os.path.join(year_dir(y), "events.json"), "w", encoding="utf-8") as f:
+        json.dump(day_rows, f, ensure_ascii=False, separators=(",", ":"))
+
     # 宗教 / 天象：每年的源文件放在 _source/ 下，逐年维护。
     # 没有源文件的年份不产出、页面也不显示该卡片 —— 宁可少一张，不猜日期。
     for key, cal, note in (
@@ -952,6 +967,7 @@ def render_site(all_stats: dict[int, dict], metas: dict) -> None:
         "{{SITE}}": site,
         "{{YEAR}}": str(y),
         "{{WINDOW}}": window_label,
+        "{{EVENT_YEARS}}": json.dumps(window),
         "{{NAV}}": "",
         "{{SECTIONS}}": "\n\n".join(sections),
         "{{COUNTRIES}}": str(len(i18n.COUNTRIES)),
