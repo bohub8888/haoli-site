@@ -682,6 +682,10 @@ def build_year(y: int) -> tuple[dict, dict]:
                             f"蚝历 · 中国澳门公众假期（{y}）", evs_of(mo_t), "mo", y)
     stats["tw"] = write_ics(os.path.join(out_ics, f"tw-{y}.ics"),
                             f"蚝历 · 中国台湾节日（{y}）", tw_events(y), "tw", y)
+    # 港澳台的名字/说明落进 meta：网站卡片和 App 的「国家目录」都从这里取，避免两处各写一份
+    meta["hk"] = {"zh": "中国香港", "note": "公众假期", "region": "港澳台"}
+    meta["mo"] = {"zh": "中国澳门", "note": "公众假期与补假", "region": "港澳台"}
+    meta["tw"] = {"zh": "中国台湾", "note": "办公日历表连假", "region": "港澳台"}
 
     overseas = build_overseas(y)
     by_region: dict[str, list[tuple]] = {}
@@ -903,6 +907,46 @@ def _apk_size_text() -> str:
     return f"{kb} KB" if kb else "770 KB"
 
 
+def write_countries_json(stats: dict, meta: dict, window: list[int]) -> None:
+    """给 App 用的「国家/地区目录」：/data/countries.json。
+
+    App 里要和网站一样按分区列出所有国家（含合集），但国家名、说明、条数
+    这些都不该硬编码进 APK——数据一变就得改代码重新发版。这里按网站的
+    DISPLAY_GROUPS 原样导出一次，App 联网读它、本地缓存，网站加国家 App 自动有。
+    """
+    label = f"{window[0]}–{window[-1]}" if len(window) > 1 else str(window[0])
+    groups: list[dict] = []
+
+    def item(slug: str, zh: str, note: str) -> dict:
+        return {"slug": slug, "zh": zh, "note": note, "count": int(stats.get(slug, 0))}
+
+    # 中国港澳台：放最前，和网站「中国」分区相邻
+    hmt = [item(k, meta[k]["zh"], meta[k]["note"]) for k in ("hk", "mo", "tw") if k in stats]
+    if hmt:
+        groups.append({"title": "中国港澳台", "items": hmt})
+
+    for title, slug, regions in DISPLAY_GROUPS:
+        keys = [k for k, m in meta.items() if m["region"] in regions and k not in (slug,)]
+        if not keys:
+            continue
+        items = [item(slug, f"{title}合集", i18n.REGION_NOTE.get(regions[0], ""))]
+        items += [item(k, meta[k]["zh"], meta[k]["note"]) for k in keys]
+        groups.append({"title": title, "items": items})
+
+    topics = [item(k, meta[k]["zh"], tip) for k, tip in
+              (("religion", "开斋节 · 宰牲节 · 复活节 · 佛诞"),
+               ("world-events", "日食 · 月食 · 流星雨 · 大赛")) if k in stats]
+    if topics:
+        groups.append({"title": "专题", "items": topics})
+
+    payload = {"window": label, "groups": groups}
+    os.makedirs(os.path.join(BASE, "data"), exist_ok=True)
+    with open(os.path.join(BASE, "data", "countries.json"), "w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
+    n = sum(len(g["items"]) for g in groups)
+    print(f"  data/countries.json：{len(groups)} 个分区 / {n} 个国家地区")
+
+
 def render_site(all_stats: dict[int, dict], metas: dict) -> None:
     """单页常青版式：只渲染「当前窗口」（今年 + 明年若可用）这一页，落在根 index.html。
 
@@ -999,6 +1043,7 @@ def render_site(all_stats: dict[int, dict], metas: dict) -> None:
     tpl = tpl.replace('src="../wx-qr.jpg"', 'src="wx-qr.jpg"')
     open(os.path.join(BASE, "index.html"), "w", encoding="utf-8").write(tpl)
     print(f"  site: 根 index.html（窗口 {window_label}，{len(sections)} 个分区）")
+    write_countries_json(stats, meta, window)
 
 
 def write_year_redirects() -> None:
