@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{WINDOW}} 节假日日历 · 放假安排与调休 · 一键导入手机日历 | 蚝历</title>
+<meta name="description" content="{{DESC}}">
+<meta name="keywords" content="{{YEAR}}年节假日,{{YEAR}}放假安排,{{YEAR}}春节放假,{{YEAR}}国庆,调休,ics日历,导入手机日历,节假日日历">
+<link rel="canonical" href="{{SITE}}/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{WINDOW}} 节假日日历 · 放假安排与调休">
+<meta property="og:description" content="中国 + 全球 {{COUNTRIES}} 国节假日，点击按钮就能导入你的手机日历。">
+<meta property="og:url" content="{{SITE}}/">
+<meta property="og:image" content="{{SITE}}/oyster-logo.png">
+<link rel="icon" href="../oyster-logo.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",sans-serif;background:#f5f5f7;color:#1d1d1f;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:520px;margin:0 auto;padding:0 16px 40px}
+.brand{display:flex;align-items:center;gap:10px;padding:28px 0 6px}
+.brand img{width:40px;height:40px;border-radius:10px}
+.brand .name{font-size:22px;font-weight:800;letter-spacing:-0.02em}
+.brand .name span{color:#ff6b35}
+.tagline{font-size:13px;color:#8e8e93;margin-bottom:10px;padding-left:50px}
+
+/* 年份切换：上一年在左，下一年在右 */
+.yearnav{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;min-height:26px}
+.yearnav .yn{display:inline-flex;align-items:center;gap:2px;font-size:12.5px;font-weight:600;color:#6e6e73;background:#fff;border:1px solid #eaeaef;border-radius:999px;padding:4px 11px;text-decoration:none;transition:color .15s,border-color .15s,transform .15s;font-variant-numeric:tabular-nums}
+.yearnav .yn:hover{color:#ff6b35;border-color:#ffd6c6;transform:translateY(-1px)}
+
+/* hero：左侧标题 + 右侧两个 App 入口（限行 / 蚝历），竖排叠放 */
+.hero{display:flex;align-items:center;gap:10px 12px;flex-wrap:wrap}
+.hero-main{flex:1 1 0;min-width:0}
+.hero-aside{flex:0 0 auto;display:flex;flex-direction:column;gap:6px}
+.hero h1{font-size:25px;font-weight:800;letter-spacing:-0.02em;margin-bottom:6px;line-height:1.25}
+.hero p{font-size:13px;color:#6e6e73;line-height:1.45}
+.hero-banner{flex:0 0 auto;display:flex;align-items:center;gap:8px;background:#fff;border-radius:12px;padding:8px 12px 8px 8px;text-decoration:none;color:inherit;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #eaeaef;transition:transform .15s,box-shadow .15s}
+.hero-banner:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.09)}
+.hero-banner .hb-icon{width:32px;height:32px;border-radius:8px;flex:0 0 auto;display:block}
+.hero-banner .hb-text{display:flex;flex-direction:column;line-height:1.25}
+.hero-banner .hb-text b{font-size:12px;font-weight:700;white-space:nowrap}
+.hero-banner .hb-text small{font-size:10px;color:#8e8e93;white-space:nowrap}
+.hero-banner .hb-tag{font-size:9px;font-weight:700;color:#ff6b35;background:#fff1eb;border-radius:4px;padding:1px 4px;margin-left:2px}
+.hero-banner .hb-ver{font-size:9px;font-weight:600;color:#8e8e93;margin-left:4px;font-variant-numeric:tabular-nums}
+
+.section{margin-top:22px}
+.section-title{font-size:12px;font-weight:600;color:#8e8e93;letter-spacing:0.06em;margin-bottom:8px;padding-left:4px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.card{background:#fff;border-radius:12px;padding:12px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.card-head{display:flex;justify-content:space-between;align-items:baseline;gap:4px;margin-bottom:2px}
+.card h3{font-size:14px;font-weight:600}
+.card .count{font-size:11px;color:#8e8e93;font-variant-numeric:tabular-nums;white-space:nowrap}
+.card p{font-size:12px;color:#6e6e73;margin-bottom:8px;line-height:1.4}
+.btn{display:block;width:100%;padding:8px;text-align:center;border-radius:8px;text-decoration:none;font-size:13px;font-weight:600;border:none;cursor:pointer;transition:opacity .15s}
+.btn:active{opacity:.8}
+.btn.primary{background:#ff6b35;color:#fff}
+.btn.secondary{background:#f0f0f5;color:#1d1d1f}
+.sub{display:block;margin-top:6px;text-align:center;font-size:11.5px;color:#ff6b35;text-decoration:none;font-weight:600}
+.subrow{display:flex;justify-content:center;align-items:center;gap:11px;margin-top:6px}
+.subrow .sub{margin:0}
+.cpy{background:none;border:none;padding:0;font-family:inherit;font-size:11.5px;color:#8e8e93;cursor:pointer}
+.cpy:active{opacity:.6}
+.cpy.done{color:#34c759}
+.sub:active{opacity:.7}
+.sub::after{content:" ›"}
+.hint{font-size:11.5px;color:#8e8e93;line-height:1.6;margin:-2px 0 0 4px}
+.hint b{color:#6e6e73;font-weight:600}
+.badge{display:inline-block;background:#ff6b35;color:#fff;font-size:10px;padding:1px 7px;border-radius:4px;margin-left:6px;vertical-align:middle;font-weight:600}
+.panel{background:#fff;border-radius:14px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.panel p{font-size:14px;color:#48484a;margin-bottom:6px}
+.panel p:last-child{margin-bottom:0}
+.panel strong{color:#1d1d1f}
+.panel ol,.panel ul{padding-left:20px;font-size:14px;color:#48484a}
+.panel li{margin-bottom:6px}
+.panel code{background:#f0f0f5;border-radius:4px;padding:1px 5px;font-size:12px}
+.faq details{border-top:1px solid #eee;padding:10px 0}
+.faq details:first-of-type{border-top:none}
+.faq summary{font-size:14px;font-weight:600;cursor:pointer;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"＋ ";color:#ff6b35}
+.faq details[open] summary::before{content:"－ "}
+.faq p{font-size:13px;color:#6e6e73;margin-top:6px;padding-left:16px}
+.footer{margin-top:40px;text-align:center;padding-top:22px;border-top:1px solid #e5e5ea}
+.footer .logo{display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:8px}
+.footer .logo img{width:22px;height:22px;border-radius:5px}
+.footer .logo-text{font-size:15px;font-weight:800}
+.footer .logo-text span{color:#ff6b35}
+.footer p{font-size:12px;color:#8e8e93;margin-bottom:4px}
+.footer a{color:#8e8e93;text-decoration:none}
+.footer a:hover{color:#ff6b35}
+.contact{background:#fff;border-radius:14px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,.05);display:flex;align-items:center;gap:16px}
+.contact img{width:118px;height:118px;border-radius:10px;flex:0 0 auto;display:block}
+.contact .c-text{min-width:0;flex:1}
+.contact .c-name{font-size:16px;font-weight:700;line-height:1.3}
+.contact .c-name small{font-size:11px;font-weight:600;color:#8e8e93;margin-left:6px}
+.contact .c-sub{font-size:12.5px;color:#6e6e73;margin-top:3px}
+.contact .c-tip{font-size:11.5px;color:#8e8e93;margin-top:7px;line-height:1.65}
+.contact .c-tip b{color:#ff6b35;font-weight:600}
+
+@media (max-width:400px){
+  .hero h1{font-size:21px}
+  .hero-aside{flex-direction:row;width:100%;gap:6px}
+  .hero-aside .hero-banner{flex:1 1 0;min-width:0}
+  .hero-banner{padding:6px 9px 6px 6px;gap:6px}
+  .hero-banner .hb-icon{width:26px;height:26px;border-radius:7px}
+  .hero-banner .hb-text b{font-size:10.5px}
+  .hero-banner .hb-text small{font-size:9px}
+  .hero-banner .hb-tag{font-size:8px;padding:0 3px}
+  .hero-banner .hb-ver{font-size:8px;margin-left:3px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="brand">
+    <img src="../oyster-logo.png" alt="蚝历 logo">
+    <div class="name">蚝历<span>.</span></div>
+  </header>
+  <div class="tagline">打开蚝历，每一天的节日</div>
+
+{{NAV}}
+
+  <div class="hero">
+    <div class="hero-main">
+      <h1>{{WINDOW}} 节假日日历</h1>
+      <p>中国 + 全球 {{COUNTRIES}} 国 · 导入手机日历，或订阅自动更新</p>
+    </div>
+    <div class="hero-aside">
+    <a class="hero-banner" href="https://{{HOST}}/download/bjwh-{{BJ_VER}}.apk" download>
+      <svg class="hb-icon" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path fill="#101820" d="M24,0 L84,0 A24,24 0 0 1 108,24 L108,84 A24,24 0 0 1 84,108 L24,108 A24,24 0 0 1 0,84 L0,24 A24,24 0 0 1 24,0 Z"/>
+        <path fill="none" stroke="#FF6B57" stroke-width="8" d="M54,28 A26,26 0 1 0 54.01,28 Z"/>
+        <path fill="none" stroke="#FF6B57" stroke-width="8" stroke-linecap="round" d="M36,72 L72,36"/>
+        <path fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" d="M46,46 A9,9 0 1 0 55,55 L55,58"/>
+      </svg>
+      <span class="hb-text">
+        <b>北京尾号限行<span class="hb-tag">App</span><span class="hb-ver">v{{BJ_VER}}</span></b>
+        <small>查明天限几号 →</small>
+      </span>
+    </a>
+    <a class="hero-banner" id="app" href="https://{{HOST}}/download/haoli-{{APP_VER}}.apk" download>
+      <img class="hb-icon" src="../oyster-logo.png" alt="蚝历">
+      <span class="hb-text">
+        <b>蚝历<span class="hb-tag">App</span><span class="hb-ver">v{{APP_VER}}</span></b>
+        <small>桌面小组件 · {{APP_SIZE}}</small>
+      </span>
+    </a>
+    </div>
+  </div>
+
+  <p class="hint"><b>导入</b>＝一次性快照（覆盖 {{WINDOW}} 全部年度，数据更新后再点一次就是刷新）；<b>订阅</b>＝自动更新，以后我改数据你手机上跟着变。订阅在 iPhone / iPad / Mac / Outlook 上直接生效，安卓推荐直接装「蚝历 App」一键导入。</p>
+
+  <!-- 中国：主推 -->
+  <div class="section">
+    <div class="section-title">中国</div>
+    <div class="cards">
+      <div class="card" style="grid-column:1/-1">
+        <div class="card-head">
+          <h3>中国节假日 · {{WINDOW}} <span class="badge">推荐</span></h3>
+          <span class="count">{{N:china}} 条</span>
+        </div>
+        <p>法定假日 + 调休上班 + 24 节气 + 农历传统节日 + 纪念日</p>
+        <a class="btn primary" href="ics/china.ics" download>点击导入手机日历</a>
+        <div class="subrow"><a class="sub" href="{{WEBCAL}}ics/china.ics">订阅 · 自动更新</a><button type="button" class="cpy" data-copy="{{SITE}}/ics/china.ics">复制地址</button></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><h3>中国香港</h3><span class="count">{{N:hk}} 条</span></div>
+        <p>公众假期</p>
+        <a class="btn secondary" href="ics/hk.ics" download>导入手机日历</a>
+        <div class="subrow"><a class="sub" href="{{WEBCAL}}ics/hk.ics">订阅 · 自动更新</a><button type="button" class="cpy" data-copy="{{SITE}}/ics/hk.ics">复制地址</button></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><h3>中国澳门</h3><span class="count">{{N:mo}} 条</span></div>
+        <p>公众假期与补假</p>
+        <a class="btn secondary" href="ics/mo.ics" download>导入手机日历</a>
+        <div class="subrow"><a class="sub" href="{{WEBCAL}}ics/mo.ics">订阅 · 自动更新</a><button type="button" class="cpy" data-copy="{{SITE}}/ics/mo.ics">复制地址</button></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><h3>中国台湾</h3><span class="count">{{N:tw}} 条</span></div>
+        <p>办公日历表连假</p>
+        <a class="btn secondary" href="ics/tw.ics" download>导入手机日历</a>
+        <div class="subrow"><a class="sub" href="{{WEBCAL}}ics/tw.ics">订阅 · 自动更新</a><button type="button" class="cpy" data-copy="{{SITE}}/ics/tw.ics">复制地址</button></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 各地区卡片：由 build.py 按 holiday_i18n.COUNTRIES 生成 -->
+{{SECTIONS}}
+
+  <!-- 导入说明 -->
+  <div class="section">
+    <div class="section-title">怎么导入</div>
+    <div class="panel">
+      <p><strong>iPhone / iPad</strong></p>
+      <ol>
+        <li>点「点击导入手机日历」</li>
+        <li>弹出「已添加日程」就完成了；如果只下载了文件，去「文件」App 里点这个 .ics 文件，同样会进日历</li>
+      </ol>
+      <p style="margin-top:10px"><strong>安卓 / 鸿蒙</strong></p>
+      <p>点按钮下载后，用系统日历、Google 日历或 Outlook 打开这个 .ics 文件即可导入。</p>
+      <p style="margin-top:10px"><strong>Outlook / 电脑</strong></p>
+      <p>Outlook：文件 → 打开并导出 → 导入 iCalendar。Google 日历：设置 → 导入。</p>
+      <p style="margin-top:10px"><strong>订阅（自动更新）</strong></p>
+      <ol>
+        <li>iPhone / iPad / Mac：点卡片下方的「订阅 · 自动更新」，弹出「订阅日历」确认即可</li>
+        <li>安卓：先点「复制地址」，再进系统日历「添加日历 → 通过网址添加」粘贴；<b>推荐</b>改用电脑打开 Google 日历 →「其他日历 → 从网址添加」粘贴，手机上会单独成一组</li>
+        <li>Outlook：点订阅链接会唤起 Outlook，或「添加日历 → 从 Internet 订阅」</li>
+      </ol>
+      <p style="margin-top:10px"><strong>想单独一组、不跟「我的日历」混？</strong></p>
+      <p>装「蚝历 App」（安卓）再点导入：它会在你手机日历里<b>自动创建独立的「蚝历」分组</b>（如「蚝历 · 中国节假日」），节日全在分组下，可单独改颜色、单独隐藏、随时整组删除。不想装 App 的话，就用<b>订阅</b>，同样单独成组。</p>
+      <p style="margin-top:10px"><strong>导入和订阅选一个</strong></p>
+      <p>「导入」是<b>一次性快照</b>，覆盖 {{WINDOW}} 全部年度，数据更新后回到这里再点一次就是刷新；「订阅」会<b>自动更新</b>，我这边补数据、滚入新一年，你手机上跟着变。两者别同时用，否则同一天会出现两条。</p>
+    </div>
+  </div>
+
+  <!-- FAQ：同时承担 SEO 长尾 -->
+  <div class="section faq">
+    <div class="section-title">常见问题</div>
+    <div class="panel">
+{{FAQ}}
+    </div>
+  </div>
+
+  <!-- 联系作者：微信公众号「蚝历四季」。
+       微信内打开本页可长按二维码识别直达关注页；外部浏览器引导扫码或搜一搜。 -->
+  <div class="section" id="contact">
+    <div class="section-title">联系作者</div>
+    <div class="contact">
+      <img src="../wx-qr.jpg" alt="微信公众号「蚝历四季」二维码，微信扫码或长按识别关注" loading="lazy">
+      <div class="c-text">
+        <div class="c-name">蚝历四季<small>微信公众号</small></div>
+        <div class="c-sub">微信号 ystercal <button type="button" class="cpy" data-copy="ystercal">复制</button></div>
+        <p class="c-tip">反馈、数据纠错、新功能建议都在这里。微信内打开本页可<b>长按二维码识别关注</b>；其他环境请扫码，或微信搜一搜「蚝历四季」。</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="logo">
+      <img src="../oyster-logo.png" alt="蚝历">
+      <div class="logo-text">蚝历<span>.</span></div>
+    </div>
+    <p>打开蚝历，每一天的节日</p>
+    <p>覆盖 {{COUNTRIES}} 国 + 中国港澳台 · 共 {{TOTAL}} 条 · 每年 11 月更新次年</p>    <p>© 2026 蚝历{{ICP}}</p>
+  </footer>
+
+</div>
+<script>
+document.addEventListener('click', function (e) {
+  var b = e.target && e.target.closest ? e.target.closest('.cpy') : null;
+  if (!b) return;
+  var url = b.getAttribute('data-copy'), old = b.textContent;
+  function ok() {
+    b.textContent = '已复制 ✓'; b.classList.add('done');
+    setTimeout(function () { b.textContent = old; b.classList.remove('done'); }, 1600);
+  }
+  function fallback() {
+    var ta = document.createElement('textarea');
+    ta.value = url; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); ok(); } catch (err) { window.prompt('长按复制这个地址', url); }
+    document.body.removeChild(ta);
+  }
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(url).then(ok, fallback);
+  } else { fallback(); }
+});
+</script>
+</body>
+</html>
