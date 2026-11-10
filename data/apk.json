@@ -1,9 +1,10 @@
 {
-  "version": "1.35",
-  "versionCode": 37,
-  "size": 1132526,
-  "sha256": "4e3a1148f46b032e480c84f805b922df57daa35a8274173d01426e745a460f",
-  "url": "https://49.233.147.15/download/haoli-1.35.apk",
+  "version": "1.36",
+  "versionCode": 38,
+  "size": 1133718,
+  "sha256": "351e8f9977287227e0fd728ccf1c2b32304fa43f88e63cf8b3ae7a335a6b6e6d",
+  "url": "https://49.233.147.15/download/haoli-1.36.apk",
+  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.36.apk",
   "pgyer": "https://www.pgyer.com/haoli-android",
-  "notes": "新增「更多国家 / 地区」：和网站一样按分区（中国港澳台、东亚、东南亚、南亚中亚、中东、欧洲、北美、南美、大洋洲、非洲、专题）列出全部 76 个国家地区，点分区展开；每个国家都能单独「导入」（各建一个独立日历节点，如「蚝历 · 日本」）或「订阅」。国家列表由官网动态下发，网站加国家 App 自动同步，不用更新版本。"
+  "notes": "修复应用内更新下载失败：改为官网 + 镜像双源下载，任一下完并通过校验即成功；失败时直接显示具体原因（HTTP 码 / 校验不一致 / 存储不足 / 网络异常），不再只提示「下载失败」。同时修正下载进度在后台线程刷新可能导致界面不更新的问题。"
 }
