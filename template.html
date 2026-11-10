@@ -19,8 +19,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
 .wrap{max-width:520px;margin:0 auto;padding:0 16px 40px}
 .brand{display:flex;align-items:center;gap:10px;padding:28px 0 6px}
 .brand img{width:40px;height:40px;border-radius:10px}
-.brand .name{font-size:22px;font-weight:800;letter-spacing:-0.02em}
-.brand .name span{color:#ff6b35}
+.brand .name{font-size:22px;font-weight:800;letter-spacing:-0.02em;display:flex;align-items:baseline;flex-wrap:wrap}
+.brand .name span{color:#ff6b35;font-size:14px;letter-spacing:0}
 .tagline{font-size:13px;color:#8e8e93;margin-bottom:10px;padding-left:50px}
 
 /* 年份切换：上一年在左，下一年在右 */
@@ -97,6 +97,39 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
 .contact .c-tip{font-size:11.5px;color:#8e8e93;margin-top:7px;line-height:1.65}
 .contact .c-tip b{color:#ff6b35;font-weight:600}
 
+/* 月视图：仿三星日历的月份网格 */
+.mcal{padding:14px}
+.mhead{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.mtitle{font-size:15px;font-weight:700;font-variant-numeric:tabular-nums}
+.mnav{width:32px;height:32px;border-radius:9px;border:1px solid #eaeaef;background:#fff;font-size:16px;line-height:1;color:#6e6e73;cursor:pointer;transition:color .15s,border-color .15s}
+.mnav:hover{color:#ff6b35;border-color:#ffd6c6}
+.mnav:disabled{opacity:.3;cursor:default}
+.mgrid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
+.mweek span{text-align:center;font-size:10.5px;color:#8e8e93;padding:4px 0;font-weight:600}
+.mday{min-height:54px;border-radius:9px;padding:3px 2px;background:#fafafc;text-align:center;overflow:hidden;cursor:pointer;transition:background .15s}
+.mday:hover{background:#fff1eb}
+.mday.out{opacity:.35}
+.mday .num{display:inline-block;min-width:20px;height:20px;line-height:20px;border-radius:10px;font-size:12px;font-variant-numeric:tabular-nums}
+.mday.today .num{background:#ff6b35;color:#fff;font-weight:700}
+.mday.sat .num{color:#4a90e2}
+.mday.sun .num{color:#e04848}
+.mev{display:block;font-size:9px;line-height:1.35;color:#c0392b;background:#fff1eb;border-radius:3px;padding:0 3px;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:left}
+.mday .more{font-size:9px;color:#8e8e93;display:block;text-align:left;padding-left:3px}
+.mtip{font-size:11.5px;color:#8e8e93;margin:10px 0 0 4px}
+.mtip b{color:#6e6e73}
+
+/* 点某一天弹出的底部抽屉（模拟手机日历的当日详情） */
+.msheet{position:fixed;inset:0;background:rgba(0,0,0,.35);display:none;z-index:50}
+.msheet.open{display:block}
+.msheet .sheet{position:absolute;left:0;right:0;bottom:0;background:#fff;border-radius:16px 16px 0 0;padding:16px 16px 28px;max-height:72vh;overflow:auto;box-shadow:0 -8px 30px rgba(0,0,0,.15)}
+.msheet .grab{width:36px;height:4px;border-radius:2px;background:#e0e0e5;margin:0 auto 12px}
+.msheet h4{font-size:16px;font-weight:700;margin-bottom:2px}
+.msheet .msub{font-size:12px;color:#8e8e93;margin-bottom:8px}
+.msheet .mclose{position:absolute;top:12px;right:14px;border:none;background:#f0f0f5;width:28px;height:28px;border-radius:14px;font-size:14px;color:#6e6e73;cursor:pointer}
+.mitem{border-top:1px solid #f0f0f2;padding:9px 0}
+.mitem b{font-size:13.5px;display:block}
+.mitem span{font-size:11.5px;color:#8e8e93;line-height:1.55;display:block;margin-top:2px}
+
 @media (max-width:400px){
   .hero h1{font-size:21px}
   .hero-aside{flex-direction:row;width:100%;gap:6px}
@@ -107,6 +140,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
   .hero-banner .hb-text small{font-size:9px}
   .hero-banner .hb-tag{font-size:8px;padding:0 3px}
   .hero-banner .hb-ver{font-size:8px;margin-left:3px}
+  .brand .name{font-size:18px}
+  .brand .name span{font-size:12px}
 }
 </style>
 </head>
@@ -115,9 +150,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
 
   <header class="brand">
     <img src="../oyster-logo.png" alt="蚝历 logo">
-    <div class="name">蚝历<span>.</span></div>
+    <div class="name">蚝历<span>.节假日纪念日日历大全</span></div>
   </header>
-  <div class="tagline">打开蚝历，每一天的节日</div>
+  <div class="tagline">每一天的好日子 Everyday ho-li-d(a)y</div>
 
 {{NAV}}
 
@@ -188,6 +223,32 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
   <!-- 各地区卡片：由 build.py 按 holiday_i18n.COUNTRIES 生成 -->
 {{SECTIONS}}
 
+  <!-- 月视图：仿三星日历的月份网格，全球合并数据，点某天看当日全部节日 -->
+  <div class="section" id="monthview">
+    <div class="section-title">月视图 · 每天的节日一目了然</div>
+    <div class="panel mcal">
+      <div class="mhead">
+        <button type="button" id="mPrev" class="mnav" aria-label="上个月">‹</button>
+        <div class="mtitle" id="mTitle">加载中…</div>
+        <button type="button" id="mNext" class="mnav" aria-label="下个月">›</button>
+      </div>
+      <div class="mgrid mweek"><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span class="sat">六</span><span class="sun">日</span></div>
+      <div class="mgrid" id="mGrid"></div>
+      <p class="mtip"><b>橙圈</b>是今天 · 点任意一天看当天全部节日（含国家/地区明细）</p>
+    </div>
+  </div>
+
+  <!-- 点某一天弹出的底部抽屉 -->
+  <div class="msheet" id="mSheet">
+    <div class="sheet" role="dialog" aria-modal="true">
+      <div class="grab"></div>
+      <button type="button" class="mclose" id="mClose">✕</button>
+      <h4 id="mSheetTitle"></h4>
+      <div class="msub" id="mSheetSub"></div>
+      <div id="mSheetList"></div>
+    </div>
+  </div>
+
   <!-- 导入说明 -->
   <div class="section">
     <div class="section-title">怎么导入</div>
@@ -241,7 +302,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
       <img src="../oyster-logo.png" alt="蚝历">
       <div class="logo-text">蚝历<span>.</span></div>
     </div>
-    <p>打开蚝历，每一天的节日</p>
+    <p>每一天的好日子 Everyday ho-li-d(a)y</p>
     <p>覆盖 {{COUNTRIES}} 国 + 中国港澳台 · 共 {{TOTAL}} 条 · 每年 11 月更新次年</p>    <p>© 2026 蚝历{{ICP}}</p>
   </footer>
 
@@ -266,6 +327,90 @@ document.addEventListener('click', function (e) {
     navigator.clipboard.writeText(url).then(ok, fallback);
   } else { fallback(); }
 });
+</script>
+<script>
+/* 月视图（仿三星日历）：加载窗口内各年 events.json，按月渲染全球合并数据。
+ * 数据由 build.py 从「全球大全」ics 逐日展开生成（含中国 + 各国 + 节气 + 纪念日）。 */
+(function () {
+  var YEARS = {{EVENT_YEARS}};
+  var EV = {};                 // "YYYY-MM-DD" -> [{t,x},...]
+  var now = new Date();
+  var todayStr = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
+  var cur = new Date(now.getFullYear(), now.getMonth(), 1);
+  var minM = YEARS[0] * 12;                       // 2026-01 => 24312
+  var maxM = YEARS[YEARS.length - 1] * 12 + 11;   // 最后一年 12 月
+  var WD = ['日', '一', '二', '三', '四', '五', '六'];
+
+  var grid = document.getElementById('mGrid');
+  var title = document.getElementById('mTitle');
+  var btnPrev = document.getElementById('mPrev');
+  var btnNext = document.getElementById('mNext');
+  var sheet = document.getElementById('mSheet');
+
+  function curM() { return cur.getFullYear() * 12 + cur.getMonth(); }
+
+  function render() {
+    var y = cur.getFullYear(), m = cur.getMonth();
+    title.textContent = y + ' 年 ' + (m + 1) + ' 月';
+    btnPrev.disabled = curM() <= minM;
+    btnNext.disabled = curM() >= maxM;
+    grid.innerHTML = '';
+    var first = new Date(y, m, 1);
+    var lead = (first.getDay() + 6) % 7;              // 周一开头
+    var cells = [];
+    var startD = new Date(y, m, 1 - lead);
+    for (var i = 0; i < 42; i++) cells.push(new Date(startD.getFullYear(), startD.getMonth(), startD.getDate() + i));
+    cells.forEach(function (d) {
+      var ds = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+      var inMonth = d.getMonth() === m;
+      var inYears = d.getFullYear() >= YEARS[0] && d.getFullYear() <= YEARS[YEARS.length - 1];
+      var cell = document.createElement('div');
+      cell.className = 'mday' + (inMonth ? '' : ' out') + (ds === todayStr ? ' today' : '') +
+        (d.getDay() === 6 ? ' sat' : '') + (d.getDay() === 0 ? ' sun' : '');
+      var html = '<span class="num">' + d.getDate() + '</span>';
+      var evs = inYears ? (EV[ds] || []) : [];
+      for (var j = 0; j < evs.length && j < 2; j++) html += '<span class="mev">' + esc(evs[j].t) + '</span>';
+      if (evs.length > 2) html += '<span class="more">+' + (evs.length - 2) + '</span>';
+      cell.innerHTML = html;
+      if (evs.length) cell.addEventListener('click', function () { openSheet(ds, evs); });
+      grid.appendChild(cell);
+    });
+  }
+
+  function esc(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  function openSheet(ds, evs) {
+    var p = ds.split('-');
+    var d = new Date(+p[0], +p[1] - 1, +p[2]);
+    document.getElementById('mSheetTitle').textContent = (+p[1]) + ' 月 ' + (+p[2]) + ' 日';
+    document.getElementById('mSheetSub').textContent = d.getFullYear() + ' 年 · 星期' + WD[d.getDay()] + ' · ' + evs.length + ' 条';
+    var box = document.getElementById('mSheetList');
+    box.innerHTML = evs.map(function (e) {
+      return '<div class="mitem"><b>' + esc(e.t) + '</b>' + (e.x ? '<span>' + esc(e.x) + '</span>' : '') + '</div>';
+    }).join('');
+    sheet.classList.add('open');
+  }
+
+  document.getElementById('mClose').addEventListener('click', function () { sheet.classList.remove('open'); });
+  sheet.addEventListener('click', function (e) { if (e.target === sheet) sheet.classList.remove('open'); });
+  btnPrev.addEventListener('click', function () { cur = new Date(cur.getFullYear(), cur.getMonth() - 1, 1); render(); });
+  btnNext.addEventListener('click', function () { cur = new Date(cur.getFullYear(), cur.getMonth() + 1, 1); render(); });
+
+  Promise.all(YEARS.map(function (y) {
+    return fetch('/' + y + '/events.json').then(function (r) { return r.json(); });
+  })).then(function (lists) {
+    lists.forEach(function (rows) {
+      (rows || []).forEach(function (r) {
+        (EV[r.d] = EV[r.d] || []).push({ t: r.t, x: r.x });
+      });
+    });
+    render();
+  }).catch(function () {
+    title.textContent = '月历数据加载失败';
+  });
+})();
 </script>
 </body>
 </html>
