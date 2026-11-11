@@ -1,0 +1,516 @@
+{
+  "window": "2026–2027",
+  "groups": [
+    {
+      "title": "中国港澳台",
+      "items": [
+        {
+          "slug": "hk",
+          "zh": "中国香港",
+          "note": "公众假期",
+          "count": 34
+        },
+        {
+          "slug": "mo",
+          "zh": "中国澳门",
+          "note": "公众假期与补假",
+          "count": 52
+        },
+        {
+          "slug": "tw",
+          "zh": "中国台湾",
+          "note": "办公日历表连假",
+          "count": 22
+        }
+      ]
+    },
+    {
+      "title": "东亚",
+      "items": [
+        {
+          "slug": "east-asia",
+          "zh": "东亚合集",
+          "note": "中 · 日 · 韩 · 蒙",
+          "count": 88
+        },
+        {
+          "slug": "jp",
+          "zh": "日本",
+          "note": "祝日与振替休日",
+          "count": 35
+        },
+        {
+          "slug": "korea",
+          "zh": "韩国",
+          "note": "公休日与补假",
+          "count": 45
+        },
+        {
+          "slug": "mn",
+          "zh": "蒙古",
+          "note": "公共假日",
+          "count": 32
+        }
+      ]
+    },
+    {
+      "title": "东南亚",
+      "items": [
+        {
+          "slug": "southeast",
+          "zh": "东南亚合集",
+          "note": "新马泰越印尼菲柬老缅文莱",
+          "count": 220
+        },
+        {
+          "slug": "sg",
+          "zh": "新加坡",
+          "note": "公共假日",
+          "count": 26
+        },
+        {
+          "slug": "my",
+          "zh": "马来西亚",
+          "note": "公共假日",
+          "count": 31
+        },
+        {
+          "slug": "th",
+          "zh": "泰国",
+          "note": "佛教节日与公休",
+          "count": 52
+        },
+        {
+          "slug": "vn",
+          "zh": "越南",
+          "note": "公共假日",
+          "count": 29
+        },
+        {
+          "slug": "id",
+          "zh": "印度尼西亚",
+          "note": "公共假日",
+          "count": 35
+        },
+        {
+          "slug": "ph",
+          "zh": "菲律宾",
+          "note": "法定与特别假日",
+          "count": 40
+        },
+        {
+          "slug": "kh",
+          "zh": "柬埔寨",
+          "note": "公共假日",
+          "count": 44
+        },
+        {
+          "slug": "la",
+          "zh": "老挝",
+          "note": "公共假日",
+          "count": 16
+        },
+        {
+          "slug": "mm",
+          "zh": "缅甸",
+          "note": "公共假日",
+          "count": 58
+        },
+        {
+          "slug": "bn",
+          "zh": "文莱",
+          "note": "公共假日",
+          "count": 39
+        }
+      ]
+    },
+    {
+      "title": "南亚 · 中亚",
+      "items": [
+        {
+          "slug": "south-asia",
+          "zh": "南亚 · 中亚合集",
+          "note": "印巴孟尼",
+          "count": 150
+        },
+        {
+          "slug": "india",
+          "zh": "印度",
+          "note": "联邦与主要节日",
+          "count": 37
+        },
+        {
+          "slug": "pk",
+          "zh": "巴基斯坦",
+          "note": "公共假日",
+          "count": 31
+        },
+        {
+          "slug": "bd",
+          "zh": "孟加拉国",
+          "note": "公共假日",
+          "count": 36
+        },
+        {
+          "slug": "np",
+          "zh": "尼泊尔",
+          "note": "公共假日",
+          "count": 67
+        },
+        {
+          "slug": "kz",
+          "zh": "哈萨克斯坦",
+          "note": "公共假日",
+          "count": 38
+        }
+      ]
+    },
+    {
+      "title": "中东",
+      "items": [
+        {
+          "slug": "middle-east",
+          "zh": "中东合集",
+          "note": "海湾六国 · 以色列 · 土耳其",
+          "count": 74
+        },
+        {
+          "slug": "ae",
+          "zh": "阿联酋",
+          "note": "公共假日",
+          "count": 25
+        },
+        {
+          "slug": "sa",
+          "zh": "沙特阿拉伯",
+          "note": "公共假日",
+          "count": 25
+        },
+        {
+          "slug": "qa",
+          "zh": "卡塔尔",
+          "note": "公共假日",
+          "count": 16
+        },
+        {
+          "slug": "kw",
+          "zh": "科威特",
+          "note": "公共假日",
+          "count": 27
+        },
+        {
+          "slug": "il",
+          "zh": "以色列",
+          "note": "犹太节日",
+          "count": 18
+        },
+        {
+          "slug": "tr",
+          "zh": "土耳其",
+          "note": "公共假日",
+          "count": 28
+        }
+      ]
+    },
+    {
+      "title": "欧洲",
+      "items": [
+        {
+          "slug": "europe",
+          "zh": "欧洲合集",
+          "note": "欧盟主要国家 + 英国 · 瑞士 · 俄罗斯",
+          "count": 193
+        },
+        {
+          "slug": "uk",
+          "zh": "英国",
+          "note": "银行假日",
+          "count": 15
+        },
+        {
+          "slug": "de",
+          "zh": "德国",
+          "note": "联邦法定假日",
+          "count": 18
+        },
+        {
+          "slug": "fr",
+          "zh": "法国",
+          "note": "公共假日",
+          "count": 22
+        },
+        {
+          "slug": "it",
+          "zh": "意大利",
+          "note": "公共假日",
+          "count": 28
+        },
+        {
+          "slug": "es",
+          "zh": "西班牙",
+          "note": "公共假日",
+          "count": 17
+        },
+        {
+          "slug": "pt",
+          "zh": "葡萄牙",
+          "note": "公共假日",
+          "count": 26
+        },
+        {
+          "slug": "nl",
+          "zh": "荷兰",
+          "note": "公共假日",
+          "count": 20
+        },
+        {
+          "slug": "be",
+          "zh": "比利时",
+          "note": "公共假日",
+          "count": 24
+        },
+        {
+          "slug": "ch",
+          "zh": "瑞士",
+          "note": "联邦法定假日",
+          "count": 8
+        },
+        {
+          "slug": "at",
+          "zh": "奥地利",
+          "note": "公共假日",
+          "count": 26
+        },
+        {
+          "slug": "se",
+          "zh": "瑞典",
+          "note": "公共假日",
+          "count": 26
+        },
+        {
+          "slug": "no",
+          "zh": "挪威",
+          "note": "公共假日",
+          "count": 24
+        },
+        {
+          "slug": "dk",
+          "zh": "丹麦",
+          "note": "公共假日",
+          "count": 20
+        },
+        {
+          "slug": "fi",
+          "zh": "芬兰",
+          "note": "公共假日",
+          "count": 30
+        },
+        {
+          "slug": "is",
+          "zh": "冰岛",
+          "note": "公共假日",
+          "count": 28
+        },
+        {
+          "slug": "ie",
+          "zh": "爱尔兰",
+          "note": "公共假日",
+          "count": 20
+        },
+        {
+          "slug": "pl",
+          "zh": "波兰",
+          "note": "公共假日",
+          "count": 28
+        },
+        {
+          "slug": "cz",
+          "zh": "捷克",
+          "note": "公共假日",
+          "count": 28
+        },
+        {
+          "slug": "sk",
+          "zh": "斯洛伐克",
+          "note": "公共假日",
+          "count": 24
+        },
+        {
+          "slug": "hu",
+          "zh": "匈牙利",
+          "note": "公共假日",
+          "count": 29
+        },
+        {
+          "slug": "ro",
+          "zh": "罗马尼亚",
+          "note": "公共假日",
+          "count": 34
+        },
+        {
+          "slug": "gr",
+          "zh": "希腊",
+          "note": "公共假日",
+          "count": 25
+        },
+        {
+          "slug": "ru",
+          "zh": "俄罗斯",
+          "note": "公共假日",
+          "count": 38
+        }
+      ]
+    },
+    {
+      "title": "北美",
+      "items": [
+        {
+          "slug": "north-america",
+          "zh": "北美合集",
+          "note": "美 · 加 · 墨",
+          "count": 42
+        },
+        {
+          "slug": "us",
+          "zh": "美国",
+          "note": "联邦假日",
+          "count": 27
+        },
+        {
+          "slug": "canada",
+          "zh": "加拿大",
+          "note": "联邦法定假日",
+          "count": 11
+        },
+        {
+          "slug": "mx",
+          "zh": "墨西哥",
+          "note": "法定假日",
+          "count": 14
+        }
+      ]
+    },
+    {
+      "title": "南美",
+      "items": [
+        {
+          "slug": "south-america",
+          "zh": "南美合集",
+          "note": "巴西 · 阿根廷 · 智利 · 哥伦比亚 · 秘鲁",
+          "count": 116
+        },
+        {
+          "slug": "br",
+          "zh": "巴西",
+          "note": "公共假日",
+          "count": 20
+        },
+        {
+          "slug": "ar",
+          "zh": "阿根廷",
+          "note": "公共假日",
+          "count": 38
+        },
+        {
+          "slug": "cl",
+          "zh": "智利",
+          "note": "公共假日",
+          "count": 33
+        },
+        {
+          "slug": "co",
+          "zh": "哥伦比亚",
+          "note": "公共假日",
+          "count": 38
+        },
+        {
+          "slug": "pe",
+          "zh": "秘鲁",
+          "note": "公共假日",
+          "count": 34
+        }
+      ]
+    },
+    {
+      "title": "大洋洲",
+      "items": [
+        {
+          "slug": "oceania",
+          "zh": "大洋洲合集",
+          "note": "澳 · 新",
+          "count": 31
+        },
+        {
+          "slug": "au",
+          "zh": "澳大利亚",
+          "note": "公共假日",
+          "count": 14
+        },
+        {
+          "slug": "nz",
+          "zh": "新西兰",
+          "note": "公共假日",
+          "count": 29
+        }
+      ]
+    },
+    {
+      "title": "非洲",
+      "items": [
+        {
+          "slug": "africa",
+          "zh": "非洲合集",
+          "note": "埃及 · 南非 · 摩洛哥 · 肯尼亚 · 尼日利亚",
+          "count": 107
+        },
+        {
+          "slug": "eg",
+          "zh": "埃及",
+          "note": "公共假日",
+          "count": 32
+        },
+        {
+          "slug": "za",
+          "zh": "南非",
+          "note": "公共假日",
+          "count": 28
+        },
+        {
+          "slug": "ma",
+          "zh": "摩洛哥",
+          "note": "公共假日",
+          "count": 36
+        },
+        {
+          "slug": "ke",
+          "zh": "肯尼亚",
+          "note": "公共假日",
+          "count": 25
+        },
+        {
+          "slug": "ng",
+          "zh": "尼日利亚",
+          "note": "公共假日",
+          "count": 33
+        }
+      ]
+    },
+    {
+      "title": "专题",
+      "items": [
+        {
+          "slug": "religion",
+          "zh": "全球宗教节日",
+          "note": "开斋节 · 宰牲节 · 复活节 · 佛诞",
+          "count": 15
+        },
+        {
+          "slug": "world-events",
+          "zh": "天象与赛事",
+          "note": "日食 · 月食 · 流星雨 · 大赛",
+          "count": 11
+        }
+      ]
+    }
+  ]
+}
