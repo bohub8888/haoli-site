@@ -1,10 +1,10 @@
 {
-  "version": "1.42",
-  "versionCode": 44,
-  "size": 1344152,
-  "sha256": "4baca6ee4442744920db1c9ecc86f2b8b9a881dc2d8cfc429077e7d827b17c86",
-  "url": "https://49.233.147.15/download/haoli-1.42.apk",
-  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.42.apk",
+  "version": "1.43",
+  "versionCode": 45,
+  "size": 1353273,
+  "sha256": "684074191cd907b1b460f11cc826e333d693994cae2aadfa7f6c8cbdf1902ec7",
+  "url": "https://49.233.147.15/download/haoli-1.43.apk",
+  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.43.apk",
   "pgyer": "https://www.pgyer.com/haoli-android",
-  "notes": "2×1 小组件改版：形状回归胶囊（两端全圆，与北京尾号限行同形），三行居中——「今天有」小字 + 节日名大字（品牌黄）+ 「及 …等 N 个节日」（黄色总数钉尾）；配色与 4×2/2×2 统一为三星天气卡亮天蓝，浅深两套。"
+  "notes": "修复系统切换深色/浅色时桌面小组件不跟随（改用系统资源限定符 + 配置变化即时重绘）；深色配色按三星系统天气 4×2 深色卡实测取色 #2A335A→#4F5885，与桌面观感一致；去掉 4×2 / 2×2 卡面右上角的半透明装饰水印，卡面更干净；官网下载按钮改为跟随 apk.json 自动更新。"
 }
