@@ -1,10 +1,10 @@
 {
-  "version": "1.39",
-  "versionCode": 41,
-  "size": 1341644,
-  "sha256": "f519168b37fce8bef6ac5490be9b23a9e75ff2bf78f15340d0e5147bca6527cf",
-  "url": "https://49.233.147.15/download/haoli-1.39.apk",
-  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.39.apk",
+  "version": "1.40",
+  "versionCode": 42,
+  "size": 1341744,
+  "sha256": "0c6aa120fca110ed29e32577da507a03efdfe43ce45e7d0c4fce9c1817ede89b",
+  "url": "https://49.233.147.15/download/haoli-1.40.apk",
+  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.40.apk",
   "pgyer": "https://www.pgyer.com/haoli-android",
-  "notes": "小组件全面改版：4×2 采用三星天气卡骨架，左侧大数字 + 「今天有 N 个节日 / 日期 / 农历」三行小字，右侧四行两列「节日名 | 国家」带行间横线，超出四条时末行显示「更多」；2×2 采用三星日历卡骨架，顶部黄色标题 + 三行表格。App 首页的今日列表同步改为同款表格样式，与小组件同一口径。"
+  "notes": "配色改版：小组件换成三星系统天气卡同款亮天蓝（浅色 #3E82DB→#6CA5DE，深色同色相压深一档）；节日行字号加大 30% 更易读；2×2 行宽与 4×2 对齐并同样放下四行；超出行尾黄色「更多」。"
 }
