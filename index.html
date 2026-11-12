@@ -129,6 +129,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
 .mitem{border-top:1px solid #f0f0f2;padding:9px 0}
 .mitem b{font-size:13.5px;display:block}
 .mitem span{font-size:11.5px;color:#8e8e93;line-height:1.55;display:block;margin-top:2px}
+.mitem a{font-size:11.5px;color:#3E82DB;text-decoration:none;display:inline-block;margin-top:6px}
+.mitem a:hover{text-decoration:underline}
 
 @media (max-width:400px){
   .hero h1{font-size:21px}
@@ -215,11 +217,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
         <small>查明天限几号 →</small>
       </span>
     </a>
-    <a class="hero-banner" id="app" href="https://49.233.147.15/download/haoli-1.45.apk" download>
+    <a class="hero-banner" id="app" href="https://49.233.147.15/download/haoli-1.46.apk" download>
       <img class="hb-icon" src="oyster-logo.png" alt="蚝历">
       <span class="hb-text">
-        <b>蚝历<span class="hb-tag">App</span><span class="hb-ver">v1.45</span></b>
-        <small>桌面小组件 · 1332 KB</small>
+        <b>蚝历<span class="hb-tag">App</span><span class="hb-ver">v1.46</span></b>
+        <small>桌面小组件 · 1342 KB</small>
       </span>
     </a>
     </div>
@@ -249,7 +251,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
       <div class="card" style="grid-column:1/-1">
         <div class="card-head">
           <h3>中国节假日 · 2026–2027 <span class="badge">推荐</span></h3>
-          <span class="count">537 条</span>
+          <span class="count">535 条</span>
         </div>
         <p>法定假日 + 调休上班 + 24 节气 + 农历传统节日 + 纪念日</p>
         <a class="btn primary" href="ics/china.ics" download>点击导入手机日历</a>
@@ -281,7 +283,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
     <div class="section-title">全球 · 一键全导入</div>
     <div class="cards">
       <div class="card" style="grid-column:1/-1">
-        <div class="card-head"><h3>全球节假日大全 <span class="badge">推荐</span></h3><span class="count">1249 条</span></div>
+        <div class="card-head"><h3>全球节假日大全 <span class="badge">推荐</span></h3><span class="count">1373 条</span></div>
         <p>中国（含 24 节气 · 农历节日 · 纪念日）+ 62 国 + 世界性国际日，同日同节日合并为一条</p>
         <a class="btn primary" href="ics/global.ics" download>点击导入手机日历</a>
         <div class="subrow"><a class="sub" href="webcal://49.233.147.15/ics/global.ics">订阅 · 自动更新</a><button type="button" class="cpy" data-copy="https://49.233.147.15/ics/global.ics">复制地址</button></div>
@@ -305,13 +307,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
     <div class="section-title">东亚</div>
     <div class="cards">
       <div class="card" style="grid-column:1/-1">
-        <div class="card-head"><h3>东亚合集 <span class="badge">合集</span></h3><span class="count">84 条</span></div>
+        <div class="card-head"><h3>东亚合集 <span class="badge">合集</span></h3><span class="count">82 条</span></div>
         <p>中 · 日 · 韩 · 蒙</p>
         <a class="btn primary" href="ics/east-asia.ics" download>点击导入手机日历</a>
         <div class="subrow"><a class="sub" href="webcal://49.233.147.15/ics/east-asia.ics">订阅 · 自动更新</a><button type="button" class="cpy" data-copy="https://49.233.147.15/ics/east-asia.ics">复制地址</button></div>
       </div>
       <div class="card">
-        <div class="card-head"><h3>日本</h3><span class="count">31 条</span></div>
+        <div class="card-head"><h3>日本</h3><span class="count">29 条</span></div>
         <p>祝日与振替休日</p>
         <a class="btn secondary" href="ics/jp.ics" download>导入手机日历</a>
         <div class="subrow"><a class="sub" href="webcal://49.233.147.15/ics/jp.ics">订阅 · 自动更新</a><button type="button" class="cpy" data-copy="https://49.233.147.15/ics/jp.ics">复制地址</button></div>
@@ -858,7 +860,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
       <div class="logo-text">蚝历<span>.</span></div>
     </div>
     <p>每一天的好日子 Everyday Holiday</p>
-    <p>覆盖 62 国 + 中国港澳台 · 共 4,733 条 · 每年 11 月更新次年</p>    <p>© 2026 蚝历</p>
+    <p>覆盖 62 国 + 中国港澳台 · 共 4,851 条 · 每年 11 月更新次年</p>    <p>© 2026 蚝历</p>
     <p class="tiny">数据来自公开渠道与开源节假日库，可能存在修订滞后，仅供个人参考；法定节假日安排与放假调休，请以中国政府网及各地官方公告为准。<br><a href="/privacy.html">隐私政策</a> · 不收集个人信息，不申请无关权限。</p>
   </footer>
 
@@ -944,7 +946,10 @@ document.addEventListener('click', function (e) {
     document.getElementById('mSheetSub').textContent = d.getFullYear() + ' 年 · 星期' + WD[d.getDay()] + ' · ' + evs.length + ' 条';
     var box = document.getElementById('mSheetList');
     box.innerHTML = evs.map(function (e) {
-      return '<div class="mitem"><b>' + esc(e.t) + '</b>' + (e.x ? '<span>' + esc(e.x) + '</span>' : '') + '</div>';
+      return '<div class="mitem"><b>' + esc(e.t) + '</b>' +
+        (e.x ? '<span>' + esc(e.x) + '</span>' : '') +
+        (e.u && /^https?:\/\//.test(e.u) ? '<a href="' + esc(e.u) + '" target="_blank" rel="noopener noreferrer">查看官方来源 ↗</a>' : '') +
+        '</div>';
     }).join('');
     sheet.classList.add('open');
   }
@@ -959,7 +964,7 @@ document.addEventListener('click', function (e) {
   })).then(function (lists) {
     lists.forEach(function (rows) {
       (rows || []).forEach(function (r) {
-        (EV[r.d] = EV[r.d] || []).push({ t: r.t, x: r.x });
+        (EV[r.d] = EV[r.d] || []).push({ t: r.t, x: r.x, u: r.u });
       });
     });
     render();
