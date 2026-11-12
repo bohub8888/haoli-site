@@ -1,10 +1,10 @@
 {
-  "version": "1.47",
-  "versionCode": 49,
-  "size": 1382830,
-  "sha256": "0e8e0adc95a3a330ec326c6db079400283d696580cc9cb4a7c70636ac4cd6fa1",
-  "url": "https://49.233.147.15/download/haoli-1.47.apk",
-  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.47.apk",
+  "version": "1.48",
+  "versionCode": 50,
+  "size": 1388318,
+  "sha256": "0293d25ad203c64351bbe88c6994e0498a33fdbea48898a3c6ae08c7d36561cb",
+  "url": "https://49.233.147.15/download/haoli-1.48.apk",
+  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.48.apk",
   "pgyer": "https://www.pgyer.com/haoli-android",
-  "notes": "小组件表格版式定稿：横线改为每条文字的底边，文字紧贴线、空隙在线下方，行数不满时最后一条下方也有线；折行改为名字内紧凑两行且每条最多两行，4 条及以上一律不折行、标准全名放不下才截「…」；折行态按物理列宽显式分段并微调字号，长节日完整显示、不再出现多余省略号；第一列封顶 6 字、第二列国家恒常显示且保持固定间距，「更多」与节日名同字号；2×2 单条节日改为名称居中、分类居中小字在下方；2×1 单条去掉「今天有」前缀，多条末行严格单行且两侧留白。"
+  "notes": "4×2 只有一个节日时，右下角补上「下一个节日」大字倒计时：下一个节点日只有 1 条显示「立秋 · 8月7日 周五」，多条显示「立秋 等 X 个节日」并高亮计数，两种状态同一行同一位置、卡高不变；左侧黄色大数字与倒计时数字同步加粗；2×2 单条改为「顶栏 + 与 4×2 右区完全同款」的表格首行与倒计时，v12.2 的居中名称块撤掉；长名按列宽截断但计数始终完整；密集态、空态、2×1 保持 1.47 定稿不变。"
 }
