@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>隐私政策 · 蚝历</title>
+<meta name="robots" content="index,follow">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",sans-serif;background:#f5f5f7;color:#1d1d1f;line-height:1.75;-webkit-font-smoothing:antialiased}
+.wrap{max-width:680px;margin:0 auto;padding:28px 20px 60px}
+h1{font-size:24px;font-weight:800;letter-spacing:-.02em;margin-bottom:6px}
+.sub{font-size:13px;color:#8e8e93;margin-bottom:24px}
+h2{font-size:16px;font-weight:700;margin:26px 0 8px}
+p,li{font-size:14.5px;color:#3a3a3c}
+ul{padding-left:20px;margin:6px 0}
+li{margin:4px 0}
+.card{background:#fff;border:1px solid #eaeaef;border-radius:14px;padding:18px 20px}
+a{color:#ff6b35;text-decoration:none}
+a:hover{text-decoration:underline}
+.todo{background:#fff3cd;border-radius:6px;padding:1px 6px;font-size:13px}
+footer{margin-top:30px;font-size:12.5px;color:#8e8e93}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>隐私政策</h1>
+  <div class="sub">蚝历（Android 应用，包名 com.bradpitt.haoli）· 更新日期：2026 年 11 月 10 日</div>
+
+  <div class="card">
+    <p><strong>一句话总结：蚝历不收集你的个人信息，不需要注册账号，不接入任何第三方统计、广告或推送 SDK。所有数据只存在你自己的手机里。</strong></p>
+  </div>
+
+  <h2>一、我们收集什么</h2>
+  <p>不收集。具体来说：</p>
+  <ul>
+    <li>不需要注册、不需要手机号、不需要邮箱，App 内没有任何登录功能。</li>
+    <li>不采集设备标识符（IMEI、Android ID、OAID、MAC 等）。</li>
+    <li>不采集位置、通讯录、相册、短信、通话记录。</li>
+    <li>不读取你已有的日历内容——写入节假日时不读取、不上传任何个人日程。</li>
+    <li>不含任何第三方统计（如友盟、神策、Firebase Analytics）、广告或推送 SDK。</li>
+  </ul>
+
+  <h2>二、App 申请了哪些权限，为什么</h2>
+  <ul>
+    <li><strong>网络（INTERNET）</strong>：下载节假日数据与检查版本更新。</li>
+    <li><strong>查看网络状态（ACCESS_NETWORK_STATE）</strong>：判断是否有网，避免下载失败后反复重试。</li>
+    <li><strong>读取 / 写入日历（READ_CALENDAR / WRITE_CALENDAR）</strong>：仅在你点击「导入」时使用，用于在你的日历中创建一个独立的「蚝历」日历节点并写入节假日。写入前会先确认节点归属，不会修改或删除你自己创建的日程。</li>
+    <li><strong>精确闹钟 / 开机启动（USE_EXACT_ALARM / RECEIVE_BOOT_COMPLETED）</strong>：用于桌面小组件在零点自动翻页到当天。</li>
+    <li><strong>请求安装应用（REQUEST_INSTALL_PACKAGES）</strong>：仅用于 App 内更新时安装新版本，安装动作始终由系统弹窗征得你同意。</li>
+  </ul>
+  <p>以上权限均可随时在系统设置中关闭；关闭日历权限后，App 仅保留浏览功能。</p>
+
+  <h2>三、数据存放在哪里</h2>
+  <ul>
+    <li>节假日数据下载后保存在 App 的私有目录（<code>filesDir</code>）与系统日历中，不离开你的设备。</li>
+    <li>App 不设用户账户，因此服务器端不存在与你相关的任何账号数据。</li>
+  </ul>
+
+  <h2>四、服务器日志</h2>
+  <p>网站与数据下载服务由云服务器提供，服务器会按行业惯例记录访问日志（IP、时间、请求路径、User-Agent），仅用于排查故障与防止滥用，保存期限不超过 30 天，不与任何个人身份关联，不用于画像或广告。</p>
+
+  <h2>五、第三方</h2>
+  <ul>
+    <li>App 内不含第三方 SDK（统计、广告、推送、支付均无）。</li>
+    <li>应用内更新时可能从官方网站或代码托管平台的 CDN 下载安装包，此时该 CDN 会收到请求 IP，属于常规网络传输。</li>
+    <li>我们不共享、不出售、不转让任何数据给第三方（因为我们没有数据可共享）。</li>
+  </ul>
+
+  <h2>六、未成年人</h2>
+  <p>本应用为通用工具，不面向儿童单独收集任何信息；由于不收集个人信息，未成年人可在监护人指导下使用。</p>
+
+  <h2>七、你的权利</h2>
+  <ul>
+    <li>卸载 App 即可清除全部本地数据。</li>
+    <li>在系统日历中删除「蚝历」日历节点，即可删除所有已导入的节假日。</li>
+    <li>如需行使删除、查询等权利，或对本政策有疑问，可通过下方方式联系。</li>
+  </ul>
+
+  <h2>八、政策更新</h2>
+  <p>本政策如有变更，会在本页面更新并修改页面顶部的更新日期；涉及重大变更时，会在 App 内提示。</p>
+
+  <h2>九、联系方式</h2>
+  <p>开发者：个人开发者（Bo）<br>
+  邮箱：<span class="todo">待填写</span><br>
+  也可通过应用商店/酷安的评论区留言，通常 48 小时内回复。</p>
+
+  <footer>本页面为蚝历（Android 应用）与本站点的隐私政策说明。</footer>
+</div>
+</body>
+</html>

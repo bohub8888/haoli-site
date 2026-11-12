@@ -1,10 +1,10 @@
 {
   "2026": {
-    "china": 256,
+    "china": 269,
     "hk": 17,
     "mo": 26,
     "tw": 10,
-    "jp": 18,
+    "jp": 16,
     "korea": 22,
     "mn": 16,
     "sg": 14,
@@ -66,7 +66,7 @@
     "ma": 18,
     "ke": 11,
     "ng": 14,
-    "east-asia": 44,
+    "east-asia": 42,
     "southeast": 110,
     "south-asia": 76,
     "middle-east": 38,
@@ -75,14 +75,14 @@
     "south-america": 59,
     "oceania": 14,
     "africa": 50,
-    "global": 680
+    "global": 625
   },
   "2027": {
-    "china": 255,
+    "china": 268,
     "hk": 17,
     "mo": 26,
     "tw": 12,
-    "jp": 17,
+    "jp": 15,
     "korea": 23,
     "mn": 16,
     "sg": 12,
@@ -144,7 +144,7 @@
     "ma": 18,
     "ke": 14,
     "ng": 19,
-    "east-asia": 44,
+    "east-asia": 42,
     "southeast": 110,
     "south-asia": 74,
     "middle-east": 36,
@@ -153,7 +153,7 @@
     "south-america": 57,
     "oceania": 17,
     "africa": 57,
-    "global": 679,
+    "global": 624,
     "religion": 15,
     "world-events": 11
   }

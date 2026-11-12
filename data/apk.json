@@ -1,10 +1,10 @@
 {
-  "version": "1.44",
-  "versionCode": 46,
-  "size": 1358914,
-  "sha256": "4a9e5f03959731ce4f58c990c566cf0c6aec955c1643fd4fdca23f8f0986a82a",
-  "url": "https://49.233.147.15/download/haoli-1.44.apk",
-  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.44.apk",
+  "version": "1.45",
+  "versionCode": 47,
+  "size": 1364718,
+  "sha256": "830cee900a25c3a4c86d87ec80341f2edc64e9b44663327aca868cddc0897e98",
+  "url": "https://49.233.147.15/download/haoli-1.45.apk",
+  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.45.apk",
   "pgyer": "https://www.pgyer.com/haoli-android",
-  "notes": "今天没有节日时，三张小组件统一显示「今天没有节日与纪念日」：2×1 改两行金色大字；2×2 去掉重复的顶部标题与横线，改为日历图标 + 金色文案；4×2 保留大数字 0 与日期、农历，只去掉重复那句，右侧换成同款图标 + 金色文案。日历图标为低对比金色线稿，浅色 / 深色两套均不刺眼。"
+  "notes": "数据口径升级：小组件与首页只显示中国（含港澳台）与国际主题日，外国国别条目保留在网站和分国家日历订阅中；新增 13 条逐条核实官方来源的党和国家重要纪念日（毛泽东、周恩来、邓小平、刘少奇、朱德、陈云、任弼时、李先念、孙中山诞辰纪念日，遵义会议、长征胜利、十一届三中全会，佟麟阁、赵登禹壮烈殉国）；4×2 第二列由「国家」改为类型标签（法定 / 节气 / 纪念 / 人物 / 主题等）；全量库按安全红线剔除敏感国别、外国政治人物与战争评价性纪念日；调休补假不再计入节日数；App 首页空态文案不再重复。来源渠道与校验规则已固化为生成期闸门，每条新增须有官方依据。"
 }

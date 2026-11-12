@@ -31,13 +31,13 @@
           "slug": "east-asia",
           "zh": "东亚合集",
           "note": "中 · 日 · 韩 · 蒙",
-          "count": 88
+          "count": 84
         },
         {
           "slug": "jp",
           "zh": "日本",
           "note": "祝日与振替休日",
-          "count": 35
+          "count": 31
         },
         {
           "slug": "korea",
