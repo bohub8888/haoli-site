@@ -1,10 +1,10 @@
 {
-  "version": "1.55",
-  "versionCode": 55,
-  "size": 1421394,
-  "sha256": "e0e8a9ce10a1fe7bb422cdb64cc0056996b626b238cb9342f4e04c43b6a85355",
-  "url": "https://49.233.147.15/download/haoli-1.55.apk",
-  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.55.apk",
+  "version": "1.56",
+  "versionCode": 56,
+  "size": 1431770,
+  "sha256": "314e71b212afd73fe024727315378488d7a016cd4bc25df80cb22e868c31b55a",
+  "url": "https://49.233.147.15/download/haoli-1.56.apk",
+  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.56.apk",
   "pgyer": "https://www.pgyer.com/haoli-android",
-  "notes": "新增第四种桌面形态「4×2 流水」：受 iPhone 双栏日历启发，稿纸横格设计——金黄日期做分节符，今天起一条条往下流，左列流满右列接上，装不下收「更多」；行距与老 4×2 右侧同一标准（36.5dp），名字 17dp，横线紧贴文字，超长名字走数据层短名永不折行。App 产品页「添加到桌面」同步新增流水卡一键添加入口。老卡（4×2 双栏 / 2×2 / 2×1）样式不变。"
+  "notes": "四种桌面形态统一加上原创「潮汐曲线」底纹：纯数学曲线生成的水波／山峦剪影，压在卡片下缘，浅色与夜间各一套，四角按卡片真实圆角裁切、底部完整铺满（修复圆角露底）；2×2 与 2×1 同步成套。删掉多余基准线与同心弧，只留起伏曲线，不与横线打架。分隔横线由 1px 加粗到 1dp 并提亮，接近系统天气卡的清晰度。文案、数据与上版「4×2 流水」逻辑不变。"
 }
