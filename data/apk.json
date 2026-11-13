@@ -1,10 +1,10 @@
 {
-  "version": "1.54",
-  "versionCode": 54,
-  "size": 1410170,
-  "sha256": "0d8420b8891fd1107ed504ebcc7d1618241437919befb7a8935e2cc9b3c0a0cc",
-  "url": "https://49.233.147.15/download/haoli-1.54.apk",
-  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.54.apk",
+  "version": "1.55",
+  "versionCode": 55,
+  "size": 1421394,
+  "sha256": "e0e8a9ce10a1fe7bb422cdb64cc0056996b626b238cb9342f4e04c43b6a85355",
+  "url": "https://49.233.147.15/download/haoli-1.55.apk",
+  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.55.apk",
   "pgyer": "https://www.pgyer.com/haoli-android",
-  "notes": "文案只留两个词：「节日」和「活动」。当天全是节日、纪念日、节气时说「今天有 N 个节日」；只要掺了一条会议或展会，整句改说「今天有 N 个活动」，会议也算作活动——产品里不再出现「会议」二字，避免「今天是 1 个节日：农产品交易会」这种语义打架。右区「下一个节日」同步跟随：下一条是会议就说「下一个活动」。零态「今天没有节日」保持不动。数据与倒计时口径不变，只改说法的准确性。"
+  "notes": "新增第四种桌面形态「4×2 流水」：受 iPhone 双栏日历启发，稿纸横格设计——金黄日期做分节符，今天起一条条往下流，左列流满右列接上，装不下收「更多」；行距与老 4×2 右侧同一标准（36.5dp），名字 17dp，横线紧贴文字，超长名字走数据层短名永不折行。App 产品页「添加到桌面」同步新增流水卡一键添加入口。老卡（4×2 双栏 / 2×2 / 2×1）样式不变。"
 }
