@@ -1,10 +1,10 @@
 {
-  "version": "1.58",
-  "versionCode": 58,
-  "size": 1434063,
-  "sha256": "01d381857f22f7e544ceda368e519f9c1c9d44b9295656396bc3cfe70a7c3fa8",
-  "url": "https://49.233.147.15/download/haoli-1.58.apk",
-  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.58.apk",
+  "version": "1.59",
+  "versionCode": 59,
+  "size": 1436911,
+  "sha256": "ed8bd225d646349c733d6439b399af891873bd96d587cfda9724315c25a3cc62",
+  "url": "https://49.233.147.15/download/haoli-1.59.apk",
+  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.59.apk",
   "pgyer": "https://www.pgyer.com/haoli-android",
-  "notes": "流水卡右上角的「蚝历」品牌水印修复截断：从左上角 8dp 紧框移到右上角 12dp 居中框，汉字笔画完整、不再被裁掉下半身，顶带总高与 4×48dp 等高横格完全不变。2×2 顶部「今天有 x 个节日」由品牌黄改为白色，并修复该行文字下半身被截断的问题。其余版式、潮汐底纹与节日数据不变。"
+  "notes": "经典 4×2 与 2×2 的节日名加粗（同 2×1 字重）；2×2 / 4×2 节日名字号改为定值 17dp 不再缩小，空间不够时只减少「…」前的字数（3~6 字），折行也用同一字号。流水 4×2 恢复分类列（节日名右侧淡白小字），名字按 6 字容量截断，右上角「蚝历」放大到 14dp 与 2×2 同号。2×1 胶囊节日名恒定 19dp，长名均衡折成两行并居中，每行不超过 7 字。"
 }
