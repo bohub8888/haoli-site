@@ -1,10 +1,10 @@
 {
-  "version": "1.59",
-  "versionCode": 59,
-  "size": 1436911,
-  "sha256": "ed8bd225d646349c733d6439b399af891873bd96d587cfda9724315c25a3cc62",
-  "url": "https://49.233.147.15/download/haoli-1.59.apk",
-  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.59.apk",
+  "version": "1.60",
+  "versionCode": 60,
+  "size": 1437167,
+  "sha256": "6715c57537a41e6700219dcdac8be26f0f50501ab4ea124ad8b3484649f5480b",
+  "url": "https://49.233.147.15/download/haoli-1.60.apk",
+  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.60.apk",
   "pgyer": "https://www.pgyer.com/haoli-android",
-  "notes": "经典 4×2 与 2×2 的节日名加粗（同 2×1 字重）；2×2 / 4×2 节日名字号改为定值 17dp 不再缩小，空间不够时只减少「…」前的字数（3~6 字），折行也用同一字号。流水 4×2 恢复分类列（节日名右侧淡白小字），名字按 6 字容量截断，右上角「蚝历」放大到 14dp 与 2×2 同号。2×1 胶囊节日名恒定 19dp，长名均衡折成两行并居中，每行不超过 7 字。"
+  "notes": "流水 4×2 与经典 4×2 / 2×2 的节日分类补齐：世界日 / 国际日 / 联合国主题日归「国际」，多国合并条目把国数搬进分类列（圣诞节 →「47 国」，名字不再带「（47…」尾巴），宗教 / 民俗 / 天象各自成类，法国国庆、墨西哥亡灵节还原成「国别 · 名称」。当天只有 1 个节日时，金黄节日名上方新增一行白色小字分类；多行横格版式与 1.59 完全一致。"
 }
