@@ -113,6 +113,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
 .mday.today .num{background:#ff6b35;color:#fff;font-weight:700}
 .mday.sat .num{color:#4a90e2}
 .mday.sun .num{color:#e04848}
+.mlun{display:block;font-size:10px;line-height:1.25;color:#8e8e93;margin-top:1px;white-space:nowrap;overflow:hidden}
+.mday.today .mlun{color:#e07040}
 .mev{display:block;font-size:9px;line-height:1.35;color:#c0392b;background:#fff1eb;border-radius:3px;padding:0 3px;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:left}
 .mday .more{font-size:9px;color:#8e8e93;display:block;text-align:left;padding-left:3px}
 .mtip{font-size:11.5px;color:#8e8e93;margin:10px 0 0 4px}
@@ -217,10 +219,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
         <small>查明天限几号 →</small>
       </span>
     </a>
-    <a class="hero-banner" id="app" href="https://49.233.147.15/download/haoli-1.62.apk" download>
+    <a class="hero-banner" id="app" href="https://49.233.147.15/download/haoli-1.63.apk" download>
       <img class="hb-icon" src="oyster-logo.png" alt="蚝历">
       <span class="hb-text">
-        <b>蚝历<span class="hb-tag">App</span><span class="hb-ver">v1.62</span></b>
+        <b>蚝历<span class="hb-tag">App</span><span class="hb-ver">v1.63</span></b>
         <small>桌面小组件 · 1400 KB</small>
       </span>
     </a>
@@ -238,7 +240,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
       </div>
       <div class="mgrid mweek"><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span class="sat">六</span><span class="sun">日</span></div>
       <div class="mgrid" id="mGrid"></div>
-      <p class="mtip"><b>橙圈</b>是今天 · 点任意一天看当天全部节日（含国家/地区明细）</p>
+      <p class="mtip"><b>橙圈</b>是今天 · 数字下方是农历（放不下自动收成两字）· 点任意一天看当天全部节日（含国家/地区明细）</p>
     </div>
   </div>
 
@@ -892,6 +894,7 @@ document.addEventListener('click', function (e) {
 (function () {
   var YEARS = [2026, 2027];
   var EV = {};                 // "YYYY-MM-DD" -> [{t,x},...]
+  var LUN = {};                // "YYYY-MM-DD" -> 农历（如「十月初一」），与 App 内置 cn-YYYY.json 同源
   var now = new Date();
   var todayStr = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
   var cur = new Date(now.getFullYear(), now.getMonth(), 1);
@@ -926,6 +929,8 @@ document.addEventListener('click', function (e) {
       cell.className = 'mday' + (inMonth ? '' : ' out') + (ds === todayStr ? ' today' : '') +
         (d.getDay() === 6 ? ' sat' : '') + (d.getDay() === 0 ? ' sun' : '');
       var html = '<span class="num">' + d.getDate() + '</span>';
+      var lun = LUN[ds] || '';
+      if (lun) html += '<span class="mlun" data-full="' + esc(lun) + '" data-short="' + esc(shortLunar(lun)) + '">' + esc(lun) + '</span>';
       var evs = orderEvs(inYears ? (EV[ds] || []) : []);
       for (var j = 0; j < evs.length && j < 2; j++) html += '<span class="mev">' + esc(evs[j].t) + '</span>';
       if (evs.length > 2) html += '<span class="more">+' + (evs.length - 2) + '</span>';
@@ -933,9 +938,10 @@ document.addEventListener('click', function (e) {
       if (evs.length) cell.addEventListener('click', function () { openSheet(ds, evs); });
       grid.appendChild(cell);
     });
+    fitLunar();
   }
 
-  /* v1.62：当天条目展现顺序 —— 节日在前，会议 / 展会垫底（稳定排序，组内保持数据原序）。 */
+  /* v1.63：当天条目展现顺序 —— 节日在前，会议 / 展会垫底（稳定排序，组内保持数据原序）。 */
   function isMeeting(e) { return /^(会议|展会)\s*·/.test(e.t); }
   function orderEvs(list) {
     return list.map(function (e, i) { return { e: e, i: i }; })
@@ -945,9 +951,29 @@ document.addEventListener('click', function (e) {
       })
       .map(function (o) { return o.e; });
   }
-  /* v1.62 口吻：只有当天全是会议 / 展会才说「活动」，否则一律说「节日」。 */
+  /* v1.63 口吻：只有当天全是会议 / 展会才说「活动」，否则一律说「节日」。 */
   function nounOfEvs(list) {
     return list.length && list.every(isMeeting) ? '活动' : '节日';
+  }
+
+  /* v1.63 农历两字兜底：初一显示农历月（换月信息更重要），其余显示日。
+     例：十月初一 → 十月；十月初二 → 初二；闰月的初一退回「初一」。 */
+  function shortLunar(s) {
+    var m = /^(.*?月)(.*)$/.exec(s);
+    if (!m) return s.slice(0, 2);
+    return (m[2] === '初一' && m[1].length <= 2) ? m[1] : m[2];
+  }
+  /* v1.63：放得下就四个字，放不下自动收成两个字（窗口变窄 / resize 都会重算）。 */
+  function fitLunar() {
+    var spans = grid.querySelectorAll('.mlun');
+    for (var i = 0; i < spans.length; i++) {
+      spans[i].textContent = spans[i].getAttribute('data-full');
+    }
+    for (var j = 0; j < spans.length; j++) {
+      if (spans[j].scrollWidth > spans[j].clientWidth) {
+        spans[j].textContent = spans[j].getAttribute('data-short');
+      }
+    }
   }
 
   function esc(s) {
@@ -959,7 +985,8 @@ document.addEventListener('click', function (e) {
     var p = ds.split('-');
     var d = new Date(+p[0], +p[1] - 1, +p[2]);
     document.getElementById('mSheetTitle').textContent = (+p[1]) + ' 月 ' + (+p[2]) + ' 日';
-    document.getElementById('mSheetSub').textContent = d.getFullYear() + ' 年 · 星期' + WD[d.getDay()] + ' · ' + evs.length + ' 个' + nounOfEvs(evs);
+    var lun = LUN[ds] ? ' · 农历' + LUN[ds] : '';
+    document.getElementById('mSheetSub').textContent = d.getFullYear() + ' 年 · 星期' + WD[d.getDay()] + ' · ' + evs.length + ' 个' + nounOfEvs(evs) + lun;
     var box = document.getElementById('mSheetList');
     box.innerHTML = evs.map(function (e) {
       return '<div class="mitem"><b>' + esc(e.t) + '</b>' +
@@ -976,17 +1003,32 @@ document.addEventListener('click', function (e) {
   btnNext.addEventListener('click', function () { cur = new Date(cur.getFullYear(), cur.getMonth() + 1, 1); render(); });
 
   Promise.all(YEARS.map(function (y) {
-    return fetch('/' + y + '/events.json').then(function (r) { return r.json(); });
-  })).then(function (lists) {
-    lists.forEach(function (rows) {
+    return Promise.all([
+      fetch('/' + y + '/events.json').then(function (r) { return r.json(); }),
+      /* v1.63：农历直接复用 /data/cn-YYYY.json 的 days（与 App 内置数据同源）；
+         取不到就只显示公历，绝不让整张月历挂掉。 */
+      fetch('/data/cn-' + y + '.json').then(function (r) { return r.json(); })
+        .catch(function () { return null; }),
+    ]);
+  })).then(function (pairs) {
+    pairs.forEach(function (pair, i) {
+      var y = YEARS[i], rows = pair[0] || [], cn = pair[1];
       (rows || []).forEach(function (r) {
         (EV[r.d] = EV[r.d] || []).push({ t: r.t, x: r.x, u: r.u });
       });
+      var days = (cn && cn.days) || [];
+      for (var k = 0; k < days.length; k++) {
+        var dt = new Date(Date.UTC(y, 0, 1 + k));
+        var key = dt.getUTCFullYear() + '-' + String(dt.getUTCMonth() + 1).padStart(2, '0') +
+          '-' + String(dt.getUTCDate()).padStart(2, '0');
+        LUN[key] = days[k];
+      }
     });
     render();
   }).catch(function () {
     title.textContent = '月历数据加载失败';
   });
+  window.addEventListener('resize', fitLunar);
 })();
 </script>
 </body>

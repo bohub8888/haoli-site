@@ -1,10 +1,10 @@
 {
-  "version": "1.62",
-  "versionCode": 62,
-  "size": 1437687,
-  "sha256": "499e3bca7e280b3210bb691e8f297aa41297c7ec28a3ab42c0499c51a0a6530c",
-  "url": "https://49.233.147.15/download/haoli-1.62.apk",
-  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.62.apk",
+  "version": "1.63",
+  "versionCode": 63,
+  "size": 1438191,
+  "sha256": "77c0e445837e9f64c704cd2791fb7a787fb35370aa890aa030f30e0428efe367",
+  "url": "https://49.233.147.15/download/haoli-1.63.apk",
+  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.63.apk",
   "pgyer": "https://www.pgyer.com/haoli-android",
-  "notes": "排序与文案口径：节日恒排在会议 / 展会前面（4×2、2×2、2×1、流水卡、产品页、网站月视图同源）；只有当天全是会议 / 展会才说「活动」，纯节日或节日与会议混合一律说「节日」；2×1 下方补回名词「等 N 个节日 / 活动」。版式、字号、颜色完全不变。"
+  "notes": "月历加农历：网站月历每天公历数字下方显示农历（与 App 内置数据同源），宽屏显示四字如「十月初一」，格子放不下自动收成两字（初一显示农历月「十月」，其余显示日「初二」）；点开某天的抽屉给完整农历。App 产品页顶部「11月15日 周日」后补「· 农历十月初七」。节日排序与文案口径沿用 1.62，版式字号颜色不变。"
 }
