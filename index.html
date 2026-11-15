@@ -217,10 +217,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
         <small>查明天限几号 →</small>
       </span>
     </a>
-    <a class="hero-banner" id="app" href="https://49.233.147.15/download/haoli-1.61.apk" download>
+    <a class="hero-banner" id="app" href="https://49.233.147.15/download/haoli-1.62.apk" download>
       <img class="hb-icon" src="oyster-logo.png" alt="蚝历">
       <span class="hb-text">
-        <b>蚝历<span class="hb-tag">App</span><span class="hb-ver">v1.61</span></b>
+        <b>蚝历<span class="hb-tag">App</span><span class="hb-ver">v1.62</span></b>
         <small>桌面小组件 · 1400 KB</small>
       </span>
     </a>
@@ -926,7 +926,7 @@ document.addEventListener('click', function (e) {
       cell.className = 'mday' + (inMonth ? '' : ' out') + (ds === todayStr ? ' today' : '') +
         (d.getDay() === 6 ? ' sat' : '') + (d.getDay() === 0 ? ' sun' : '');
       var html = '<span class="num">' + d.getDate() + '</span>';
-      var evs = inYears ? (EV[ds] || []) : [];
+      var evs = orderEvs(inYears ? (EV[ds] || []) : []);
       for (var j = 0; j < evs.length && j < 2; j++) html += '<span class="mev">' + esc(evs[j].t) + '</span>';
       if (evs.length > 2) html += '<span class="more">+' + (evs.length - 2) + '</span>';
       cell.innerHTML = html;
@@ -935,15 +935,31 @@ document.addEventListener('click', function (e) {
     });
   }
 
+  /* v1.62：当天条目展现顺序 —— 节日在前，会议 / 展会垫底（稳定排序，组内保持数据原序）。 */
+  function isMeeting(e) { return /^(会议|展会)\s*·/.test(e.t); }
+  function orderEvs(list) {
+    return list.map(function (e, i) { return { e: e, i: i }; })
+      .sort(function (a, b) {
+        var am = isMeeting(a.e) ? 1 : 0, bm = isMeeting(b.e) ? 1 : 0;
+        return am - bm || a.i - b.i;
+      })
+      .map(function (o) { return o.e; });
+  }
+  /* v1.62 口吻：只有当天全是会议 / 展会才说「活动」，否则一律说「节日」。 */
+  function nounOfEvs(list) {
+    return list.length && list.every(isMeeting) ? '活动' : '节日';
+  }
+
   function esc(s) {
     return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 
   function openSheet(ds, evs) {
+    evs = orderEvs(evs);
     var p = ds.split('-');
     var d = new Date(+p[0], +p[1] - 1, +p[2]);
     document.getElementById('mSheetTitle').textContent = (+p[1]) + ' 月 ' + (+p[2]) + ' 日';
-    document.getElementById('mSheetSub').textContent = d.getFullYear() + ' 年 · 星期' + WD[d.getDay()] + ' · ' + evs.length + ' 条';
+    document.getElementById('mSheetSub').textContent = d.getFullYear() + ' 年 · 星期' + WD[d.getDay()] + ' · ' + evs.length + ' 个' + nounOfEvs(evs);
     var box = document.getElementById('mSheetList');
     box.innerHTML = evs.map(function (e) {
       return '<div class="mitem"><b>' + esc(e.t) + '</b>' +

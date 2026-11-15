@@ -1,10 +1,10 @@
 {
-  "version": "1.61",
-  "versionCode": 61,
-  "size": 1437167,
-  "sha256": "dcbdd8c2856cb0d73ee8e250af83dabb40b468581e700cc4e7258a474d4c10eb",
-  "url": "https://49.233.147.15/download/haoli-1.61.apk",
-  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.61.apk",
+  "version": "1.62",
+  "versionCode": 62,
+  "size": 1437687,
+  "sha256": "499e3bca7e280b3210bb691e8f297aa41297c7ec28a3ab42c0499c51a0a6530c",
+  "url": "https://49.233.147.15/download/haoli-1.62.apk",
+  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.62.apk",
   "pgyer": "https://www.pgyer.com/haoli-android",
-  "notes": "单条态分类放大：当天只有 1 个节日时，金黄节日名上方的白色分类小字由 11dp 提到 17dp，与三星官方天气卡横格「周六 / 周日」文字同号（真机实测字高 33px vs 31px）；经典 4×2 与 2×2 一致，多行横格与流水卡版式完全不变。"
+  "notes": "排序与文案口径：节日恒排在会议 / 展会前面（4×2、2×2、2×1、流水卡、产品页、网站月视图同源）；只有当天全是会议 / 展会才说「活动」，纯节日或节日与会议混合一律说「节日」；2×1 下方补回名词「等 N 个节日 / 活动」。版式、字号、颜色完全不变。"
 }
