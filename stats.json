@@ -1,6 +1,6 @@
 {
   "2026": {
-    "china": 268,
+    "china": 298,
     "hk": 17,
     "mo": 26,
     "tw": 10,
@@ -75,10 +75,10 @@
     "south-america": 59,
     "oceania": 14,
     "africa": 50,
-    "global": 734
+    "global": 776
   },
   "2027": {
-    "china": 267,
+    "china": 297,
     "hk": 17,
     "mo": 26,
     "tw": 12,
@@ -153,8 +153,8 @@
     "south-america": 57,
     "oceania": 17,
     "africa": 57,
-    "global": 713,
+    "global": 750,
     "religion": 15,
-    "world-events": 11
+    "world-events": 9
   }
 }
