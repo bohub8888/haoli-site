@@ -1,10 +1,10 @@
 {
-  "version": "1.64",
-  "versionCode": 64,
-  "size": 1440075,
-  "sha256": "6baac1d433cd37b7120987c7a4ecc70038769c693dea09a5eecccaac0fb76811",
-  "url": "https://49.233.147.15/download/haoli-1.64.apk",
-  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.64.apk",
+  "version": "1.65",
+  "versionCode": 65,
+  "size": 1440815,
+  "sha256": "0fa883244ab5d75c96ba75b458cdca1dcd9e582643fcbbcbf496666f81920160",
+  "url": "https://49.233.147.15/download/haoli-1.65.apk",
+  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.65.apk",
   "pgyer": "https://www.pgyer.com/haoli-android",
-  "notes": "数据扩容：从联合国官方国际日清单精选补入 30 条固定日期国际日（含联合国中文日、世界足球日、世界篮球日、国际翻译日、世界自行车日等），逐条带 A/RES 决议号，C4 渠道 B 级；修回全量池分类前缀的生成逻辑（v1.60 曾只改产物未改构建，重跑会丢「国际/民俗/N 国」分类）。数据版本 2026.10 / 2027.10，每年 809 → 839 条。"
+  "notes": "新增 10 条中国历史高光时刻：女排首冠（1981-11-16，今天 45 周年）、奥运首金、首个世界冠军、北京奥运开幕、北京申奥成功、女排五连冠，以及中共一大开幕、平型关大捷、八七会议、秋收起义；逐条附人民日报 / 新华社 / 国家体育总局等 A 级来源，按节日计数、分类统一为「中国」。数据版本 2026.11 / 2027.11，每年 839 → 849 条。"
 }

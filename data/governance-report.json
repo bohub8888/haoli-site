@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-15T19:48:34+08:00",
+  "generated": "2026-11-16T09:35:27+08:00",
   "redline_mode": "v18 按内容点名：R1 战犯侵略 / R2 主权表述 / R3 三条战前体制关联日 / R4 中国池豁免 / R5 会议与展会层议题性表述（v1.50）",
   "channels": [
     {
@@ -35,7 +35,7 @@
         "人民日报 / 光明日报 / 中青在线固定纪念栏目"
       ],
       "rhythm": "季度扫描候选 → 逐条核源 → 过 curated.validate() 闸门才入库",
-      "rule": "只收官方曾以「纪念 / 周年」形式发布、日期固定可年度复现的日子；「史实记录」不等于「纪念日」"
+      "rule": "只收日期固定、可年度复现、且有 A 级依据的日子：① 官方曾以「纪念 / 周年」形式发布；② A 级央媒按日固定栏目 / 逢十周年报道逐年回顾的史实时刻（v1.65）。普通史实记录不等于纪念日；名称一律照录官方史实表述，不自造「XX 纪念日」。v1.65 口径（用户定档）：中国体育夺冠 / 党史胜利时刻按「节日」计数与措辞，分类前缀统一「中国 · 」，不单设纪念文案——沿用 1.62 的 nounOf 逻辑：单独存在是节日，节日加会议仍是节日，只有纯会议才叫活动"
     },
     {
       "id": "C4",
@@ -119,34 +119,34 @@
   },
   "counts": {
     "2026": {
-      "all_rows": 839,
+      "all_rows": 849,
       "all_days_nonempty": 308,
       "all_days_empty": 57,
-      "widget_rows": 771,
+      "widget_rows": 781,
       "widget_days_nonempty": 308,
       "widget_days_empty": 57,
       "strict_hits": 3,
-      "curated": 13
+      "curated": 23
     },
     "2027": {
-      "all_rows": 839,
-      "all_days_nonempty": 310,
-      "all_days_empty": 55,
-      "widget_rows": 775,
-      "widget_days_nonempty": 310,
-      "widget_days_empty": 55,
+      "all_rows": 849,
+      "all_days_nonempty": 312,
+      "all_days_empty": 53,
+      "widget_rows": 785,
+      "widget_days_nonempty": 312,
+      "widget_days_empty": 53,
       "strict_hits": 3,
-      "curated": 13
+      "curated": 23
     }
   },
   "validate": {
     "2026": {
-      "records": 839,
+      "records": 849,
       "errors": 0,
       "inferred": 0
     },
     "2027": {
-      "records": 839,
+      "records": 849,
       "errors": 0,
       "inferred": 0
     }
