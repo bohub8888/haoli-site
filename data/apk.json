@@ -1,10 +1,10 @@
 {
-  "version": "1.65",
-  "versionCode": 65,
-  "size": 1440815,
-  "sha256": "0fa883244ab5d75c96ba75b458cdca1dcd9e582643fcbbcbf496666f81920160",
-  "url": "https://49.233.147.15/download/haoli-1.65.apk",
-  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.65.apk",
+  "version": "1.66",
+  "versionCode": 66,
+  "size": 1463695,
+  "sha256": "93f3f01d2682a14b008d80242f35a331c90f7f5b3cf3bff7e6e0ee35d9899c74",
+  "url": "https://49.233.147.15/download/haoli-1.66.apk",
+  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.66.apk",
   "pgyer": "https://www.pgyer.com/haoli-android",
-  "notes": "新增 10 条中国历史高光时刻：女排首冠（1981-11-16，今天 45 周年）、奥运首金、首个世界冠军、北京奥运开幕、北京申奥成功、女排五连冠，以及中共一大开幕、平型关大捷、八七会议、秋收起义；逐条附人民日报 / 新华社 / 国家体育总局等 A 级来源，按节日计数、分类统一为「中国」。数据版本 2026.11 / 2027.11，每年 839 → 849 条。"
+  "notes": "排序升级：节日在前、会议 / 展会在后；组内按 中国 → 国际 → 其他国家 分级，网站与 App 严格同源。App 产品页新增词条解释（2026 年 420 条 / 2027 年 389 条），列表下一行摘要，点击可看全文与官方来源，与网页抽屉同源。数据版本 2026.12 / 2027.12，每年 849 条。"
 }

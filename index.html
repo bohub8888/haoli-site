@@ -219,11 +219,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
         <small>查明天限几号 →</small>
       </span>
     </a>
-    <a class="hero-banner" id="app" href="https://49.233.147.15/download/haoli-1.65.apk" download>
+    <a class="hero-banner" id="app" href="https://49.233.147.15/download/haoli-1.66.apk" download>
       <img class="hb-icon" src="oyster-logo.png" alt="蚝历">
       <span class="hb-text">
-        <b>蚝历<span class="hb-tag">App</span><span class="hb-ver">v1.65</span></b>
-        <small>桌面小组件 · 1407 KB</small>
+        <b>蚝历<span class="hb-tag">App</span><span class="hb-ver">v1.66</span></b>
+        <small>桌面小组件 · 1429 KB</small>
       </span>
     </a>
     </div>
@@ -943,11 +943,27 @@ document.addEventListener('click', function (e) {
 
   /* v1.63：当天条目展现顺序 —— 节日在前，会议 / 展会垫底（稳定排序，组内保持数据原序）。 */
   function isMeeting(e) { return /^(会议|展会)\s*·/.test(e.t); }
+  /* v1.66：主序节日/会议，次序 中国 → 国际 → 其他国家。g 由 build.py 与 App
+     的 WidgetRender.regionRank 同源算出，前端不靠猜名称。 */
+  function regionOfEv(e) {
+    if (typeof e.g === 'number') return e.g;
+    var t = e.t || '', i = t.indexOf('·');
+    var head = i > 0 ? t.slice(0, i).trim() : '';
+    var body = i > 0 ? t.slice(i + 1) : t;
+    if (head === '会议' || head === '展会') {
+      if (/中国|全国|两会|政协|人大|博鳌/.test(body)) return 0;
+      if (/世界|国际|全球/.test(body)) return 1;
+      return 2;
+    }
+    if (head.indexOf('中国') === 0) return 0;
+    if (head === '国际') return 1;
+    return 2;
+  }
   function orderEvs(list) {
     return list.map(function (e, i) { return { e: e, i: i }; })
       .sort(function (a, b) {
         var am = isMeeting(a.e) ? 1 : 0, bm = isMeeting(b.e) ? 1 : 0;
-        return am - bm || a.i - b.i;
+        return am - bm || regionOfEv(a.e) - regionOfEv(b.e) || a.i - b.i;
       })
       .map(function (o) { return o.e; });
   }
