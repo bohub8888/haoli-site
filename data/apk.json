@@ -1,10 +1,10 @@
 {
-  "version": "1.68",
-  "versionCode": 68,
-  "size": 1464719,
-  "sha256": "1dc9a2edee382cdb29268a4228dcc37a5c1348216c041d989fb64013cdb09218",
-  "url": "https://oyster111.top/download/haoli-1.68.apk",
-  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.68.apk",
+  "version": "1.69",
+  "versionCode": 69,
+  "size": 1466167,
+  "sha256": "483ce8c59fe721e923beb2c31254122c25c1f138c931759897cb5f869274ac9a",
+  "url": "https://oyster111.top/download/haoli-1.69.apk",
+  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.69.apk",
   "pgyer": "https://www.pgyer.com/haoli-android",
-  "notes": "正式域名上线：oyster111.top（京ICP备2026079812号），App 数据/订阅/下载全部切到新地址，裸 IP 继续保留兜底、jsDelivr 备用源不变；官网/微博/小红书分享不再像钓鱼站。数据版本 2026.12 / 2027.12，每年 849 条。"
+  "notes": "新增「清除已导入的日历」：一键删除本 App 导入的全部节假日日历节点及事件，带确认弹窗；精确匹配 haoli 本地节点，绝不误删私人日历与订阅。订阅取消说明补进 App 页。数据版本 2026.12 / 2027.12，每年 849 条。"
 }
