@@ -1,10 +1,10 @@
 {
-  "version": "1.67",
-  "versionCode": 67,
-  "size": 1464767,
-  "sha256": "7caf21e0000ac4b847ba353e27e011b305316cbae376a48104796f7f4316ee01",
-  "url": "https://49.233.147.15/download/haoli-1.67.apk",
-  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.67.apk",
+  "version": "1.68",
+  "versionCode": 68,
+  "size": 1464719,
+  "sha256": "1dc9a2edee382cdb29268a4228dcc37a5c1348216c041d989fb64013cdb09218",
+  "url": "https://oyster111.top/download/haoli-1.68.apk",
+  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.68.apk",
   "pgyer": "https://www.pgyer.com/haoli-android",
-  "notes": "2×2 / 4×2 节日名截断改为按每行分类宽度逐行计算：2 字分类（中国/国际）可显示 5 字 + …，3 字分类 5 字，4 字分类（哥伦比亚）4 字 + …，不再被当天最宽的分类一刀切压短；字号恒 17dp。另升级数据流水线：官方公告自动核对、构建幂等、日常数据热更新无需重装 App。数据版本 2026.12 / 2027.12，每年 849 条。"
+  "notes": "正式域名上线：oyster111.top（京ICP备2026079812号），App 数据/订阅/下载全部切到新地址，裸 IP 继续保留兜底、jsDelivr 备用源不变；官网/微博/小红书分享不再像钓鱼站。数据版本 2026.12 / 2027.12，每年 849 条。"
 }
