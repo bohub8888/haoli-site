@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-19T10:15:16+08:00",
+  "generated": "2026-11-19T11:34:54+08:00",
   "redline_mode": "v18 按内容点名：R1 战犯侵略 / R2 主权表述 / R3 三条战前体制关联日 / R4 中国池豁免 / R5 会议与展会层议题性表述（v1.50）",
   "channels": [
     {
@@ -129,12 +129,12 @@
       "curated": 23
     },
     "2027": {
-      "all_rows": 858,
-      "all_days_nonempty": 312,
-      "all_days_empty": 53,
-      "widget_rows": 794,
-      "widget_days_nonempty": 312,
-      "widget_days_empty": 53,
+      "all_rows": 827,
+      "all_days_nonempty": 307,
+      "all_days_empty": 58,
+      "widget_rows": 763,
+      "widget_days_nonempty": 307,
+      "widget_days_empty": 58,
       "strict_hits": 3,
       "curated": 23
     }
@@ -146,7 +146,7 @@
       "inferred": 0
     },
     "2027": {
-      "records": 858,
+      "records": 827,
       "errors": 0,
       "inferred": 0
     }
