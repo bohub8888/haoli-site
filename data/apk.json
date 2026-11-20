@@ -1,10 +1,10 @@
 {
-  "version": "1.69",
-  "versionCode": 69,
-  "size": 1466167,
-  "sha256": "483ce8c59fe721e923beb2c31254122c25c1f138c931759897cb5f869274ac9a",
-  "url": "https://oyster111.top/download/haoli-1.69.apk",
-  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.69.apk",
+  "version": "1.70",
+  "versionCode": 70,
+  "size": 1468723,
+  "sha256": "7130dda72b2e3101fd2faad54995087f107309bdc9c7cc6dce53ade1a932939b",
+  "url": "https://oyster111.top/download/haoli-1.70.apk",
+  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.70.apk",
   "pgyer": "https://www.pgyer.com/haoli-android",
-  "notes": "新增「清除已导入的日历」：一键删除本 App 导入的全部节假日日历节点及事件，带确认弹窗；精确匹配 haoli 本地节点，绝不误删私人日历与订阅。订阅取消说明补进 App 页。数据版本 2026.12 / 2027.12，每年 849 条。"
+  "notes": "新增每日后台自动同步：数据更新后无需打开 App，系统每天自动检查并更新桌面卡片（系统 JobScheduler，零依赖、不增加耗电负担）；可选每天一检。"
 }
