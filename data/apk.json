@@ -1,10 +1,10 @@
 {
-  "version": "1.70",
-  "versionCode": 70,
-  "size": 1468723,
-  "sha256": "7130dda72b2e3101fd2faad54995087f107309bdc9c7cc6dce53ade1a932939b",
-  "url": "https://oyster111.top/download/haoli-1.70.apk",
-  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.70.apk",
+  "version": "1.71",
+  "versionCode": 71,
+  "size": 1746695,
+  "sha256": "cb260c7781e3757d9a8378f4251bc79393a87ab55bcc6a326ed6a68efda6c785",
+  "url": "https://oyster111.top/download/haoli-1.71.apk",
+  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.71.apk",
   "pgyer": "https://www.pgyer.com/haoli-android",
-  "notes": "新增每日后台自动同步：数据更新后无需打开 App，系统每天自动检查并更新桌面卡片（系统 JobScheduler，零依赖、不增加耗电负担）；可选每天一检。"
+  "notes": "0节日空态升级：新增12只轮换猫咪（元宝AI绘制、纯灰阶不抢字），每天自动换一只；保留底部『下一个节日』横线小字。昨天的空态不再单调。"
 }
