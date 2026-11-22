@@ -1,10 +1,10 @@
 {
-  "version": "1.71",
-  "versionCode": 71,
-  "size": 1746695,
-  "sha256": "cb260c7781e3757d9a8378f4251bc79393a87ab55bcc6a326ed6a68efda6c785",
-  "url": "https://oyster111.top/download/haoli-1.71.apk",
-  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.71.apk",
+  "version": "1.72",
+  "versionCode": 72,
+  "size": 1746623,
+  "sha256": "1cdf51eef95455e3c4f0bf4b7ab9ee68a02311e222cb6e19319fc3c9ac061709",
+  "url": "https://oyster111.top/download/haoli-1.72.apk",
+  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.72.apk",
   "pgyer": "https://www.pgyer.com/haoli-android",
-  "notes": "0节日空态升级：新增12只轮换猫咪（元宝AI绘制、纯灰阶不抢字），每天自动换一只；保留底部『下一个节日』横线小字。昨天的空态不再单调。"
+  "notes": "2×1 单节日态补上分类小字：节日名上方显示类别（与 4×2 / 2×2 单条态同口径），名称仍保持官方全名。"
 }
