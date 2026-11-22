@@ -1,10 +1,10 @@
 {
-  "version": "1.72",
-  "versionCode": 72,
-  "size": 1746623,
-  "sha256": "1cdf51eef95455e3c4f0bf4b7ab9ee68a02311e222cb6e19319fc3c9ac061709",
-  "url": "https://oyster111.top/download/haoli-1.72.apk",
-  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.72.apk",
+  "version": "1.73",
+  "versionCode": 73,
+  "size": 1746831,
+  "sha256": "dfdf2c7cfea69fb40bdbd8ab3f296767ef78ba93d996c30b09e8b6068c17ee5a",
+  "url": "https://oyster111.top/download/haoli-1.73.apk",
+  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.73.apk",
   "pgyer": "https://www.pgyer.com/haoli-android",
-  "notes": "2×1 单节日态补上分类小字：节日名上方显示类别（与 4×2 / 2×2 单条态同口径），名称仍保持官方全名。"
+  "notes": "2×1 长名折行优化：首行多填字、两行态字号收紧不再贴边；底部「N天后」小字单节日写全名，不再显示半截名。"
 }
