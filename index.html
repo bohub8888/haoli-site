@@ -17,12 +17,12 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",sans-serif;background:#f5f5f7;color:#1d1d1f;line-height:1.6;-webkit-font-smoothing:antialiased}
 .wrap{max-width:520px;margin:0 auto;padding:0 16px 40px}
-.brand{display:flex;align-items:center;gap:10px;padding:14px 0 0}
+.brand{display:flex;align-items:center;gap:10px;padding:22px 0 2px}
 .brand img{width:40px;height:40px;border-radius:10px}
 .brand .name{font-size:22px;font-weight:800;letter-spacing:-0.02em;display:flex;align-items:baseline;flex-wrap:wrap}
 .tagline{font-size:13px;color:#8e8e93;margin-bottom:10px;padding-left:50px}
 /* 蚝历办公入口条：首页顶部的矩形，点进去是 /haoli-office.html */
-.ob{display:flex;align-items:center;gap:11px;margin:8px 0 10px;padding:10px 12px;background:#fff;border:1px solid #eaeaef;border-radius:14px;box-shadow:0 1px 3px rgba(0,0,0,.05);text-decoration:none;color:inherit;transition:transform .15s,box-shadow .15s,border-color .15s}
+.ob{display:flex;align-items:center;gap:11px;margin:11px 0 14px;padding:12px 14px;background:#fff;border:1px solid #eaeaef;border-radius:14px;box-shadow:0 1px 3px rgba(0,0,0,.05);text-decoration:none;color:inherit;transition:transform .15s,box-shadow .15s,border-color .15s}
 .ob:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.08);border-color:#ffd6c6}
 .ob-icons{display:flex;flex:0 0 auto;align-items:center}
 .ob-icons img{width:34px;height:34px;border-radius:9px;display:block;background:#fff;box-shadow:0 0 0 2px #fff,0 0 0 3px #ececf1}
@@ -45,9 +45,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
 .hero{display:flex;align-items:center;gap:10px 12px;flex-wrap:wrap}
 .hero-main{flex:1 1 0;min-width:0}
 .hero-aside{flex:0 0 auto;display:flex;flex-direction:column;gap:6px}
-.hero h1{display:flex;align-items:center;gap:10px;font-size:22px;font-weight:800;letter-spacing:-0.02em;margin-bottom:3px;line-height:1.15}
+.hero h1{display:flex;align-items:center;gap:10px;font-size:22px;font-weight:800;letter-spacing:-0.02em;margin-bottom:5px;line-height:1.2}
 .hero h1 img{width:40px;height:40px;border-radius:10px;flex:0 0 auto;display:block}
-.hero p{font-size:12.5px;color:#6e6e73;line-height:1.5}
+.hero p{font-size:12.5px;color:#6e6e73;line-height:1.55}
 .hero p .nw{white-space:nowrap}
 .hero-banner{flex:0 0 auto;display:flex;align-items:center;gap:8px;background:#fff;border-radius:12px;padding:8px 12px 8px 8px;text-decoration:none;color:inherit;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #eaeaef;transition:transform .15s,box-shadow .15s}
 .hero-banner:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.09)}
@@ -153,8 +153,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
 .mitem a:hover{text-decoration:underline}
 
 @media (max-width:400px){
-  .hero h1{font-size:18px;gap:8px}
-  .hero h1 img{width:34px;height:34px;border-radius:9px}
+  .hero h1{font-size:21px}
   .hero-aside{flex-direction:row;width:100%;gap:6px}
   .hero-aside .hero-banner{flex:1 1 0;min-width:0}
   .hero-banner{padding:6px 9px 6px 6px;gap:6px}
@@ -163,8 +162,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
   .hero-banner .hb-text small{font-size:9px}
   .hero-banner .hb-tag{font-size:8px;padding:0 3px}
   .hero-banner .hb-ver{font-size:8px;margin-left:3px}
-  .brand img{width:34px;height:34px;border-radius:9px}
   .brand .name{font-size:18px}
+  .brand .name span{font-size:12px}
 }
 </style>
 <script type="application/ld+json">
@@ -234,7 +233,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
 
   <div class="hero">
     <div class="hero-main">
-      <h1><img src="oyster-logo.png" alt="蚝历日历">蚝历日历</h1>
+      <h1><img src="../oyster-logo.png" alt="蚝历日历">蚝历日历</h1>
       <p><span class="nw">节假日纪念日日历大全。</span><wbr>2026–2027 节假日日历<span class="nw">订阅</span><wbr>和导入<span class="nw">手机电脑</span>。<wbr><span class="nw">中国 + 全球 62 国。</span></p>
     </div>
     <div class="hero-aside">
@@ -253,7 +252,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
     <a class="hero-banner" id="app" href="https://oyster111.top/download/haoli.html">
       <img class="hb-icon" src="oyster-logo.png" alt="蚝历">
       <span class="hb-text">
-        <b>蚝历<span class="hb-tag">App</span><span class="hb-ver">v1.73</span></b>
+        <b>蚝历<span class="hb-tag">App</span><span class="hb-ver">v1.74</span></b>
         <small>桌面小组件 · 1434 KB</small>
       </span>
     </a>

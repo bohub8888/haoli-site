@@ -1,7 +1,0 @@
-# 蚝历数据构建的依赖锁定（2026-11-10 验证版本）
-# 升级 holidays 前必须先跑 check_key_dates.py 的关键日期断言：
-# 新版本可能修正/新增数据（好事），也可能改行为导致日期漂移（坏事）。
-holidays==0.108
-cnlunar==0.2.5
-python-dateutil==2.9.0.post0
-six==1.17.0

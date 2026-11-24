@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>蚝历批量办公 · Word / Excel 批量生成与批量修改（本机运行）</title>
+<meta name="description" content="蚝历批量办公：只做批量。一份模板配一张 Excel 批量生成几百份 Word；几百份文档批量改文字、统一格式、批量改文件名。格式不变，文件不出本机，断网可用。">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/oyster-logo.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Segoe UI","Helvetica Neue",sans-serif;background:#f5f5f7;color:#1d1d1f;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:660px;margin:0 auto;padding:0 18px 56px}
+.top{display:flex;align-items:center;justify-content:space-between;padding:20px 0 6px}
+.back{font-size:13px;color:#8e8e93;text-decoration:none}
+.brand{display:flex;align-items:center;gap:9px;font-weight:700;font-size:14px}
+.brand img{width:30px;height:30px;border-radius:8px}
+.head{padding:26px 0 4px}
+.head h1{font-size:30px;line-height:1.25;font-weight:750;letter-spacing:-.02em}
+.head .sub{font-size:14px;color:#6e6e73;margin-top:10px;max-width:560px}
+.badge{display:inline-block;font-size:11.5px;font-weight:600;color:#8a5a00;background:#fff4d6;border:1px solid #f2e0b0;border-radius:999px;padding:2px 9px;margin-bottom:12px}
+.safe{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:22px 0 8px}
+.safe div{background:#fff;border:1px solid #eaeaef;border-radius:12px;padding:11px 12px}
+.safe b{display:block;font-size:12.5px;margin-bottom:2px}
+.safe span{font-size:11.5px;color:#6e6e73;line-height:1.5}
+@media(max-width:560px){.safe{grid-template-columns:1fr}}
+.app{background:#fff;border:1px solid #eaeaef;border-radius:18px;padding:20px;margin:16px 0}
+.app-head{display:flex;align-items:center;gap:12px}
+.app-icon{width:46px;height:46px;border-radius:12px;object-fit:contain}
+.app h2{font-size:17px;font-weight:700;letter-spacing:-.01em}
+.app-ver{font-size:11.5px;color:#8e8e93;margin-top:1px}
+.app-intro{font-size:13.5px;color:#3a3a3c;margin:12px 0 10px}
+.chips{list-style:none;display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px}
+.chips li{font-size:11.5px;color:#48484a;background:#f5f5f7;border-radius:6px;padding:3px 8px}
+.downloads{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(max-width:520px){.downloads{grid-template-columns:1fr}}
+.dl{display:block;text-decoration:none;background:#1d1d1f;color:#fff;border-radius:11px;padding:11px 14px;transition:transform .15s,box-shadow .15s}
+.dl:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(0,0,0,.16)}
+.dl-main{display:block;font-size:13.5px;font-weight:650}
+.dl-sub{display:block;font-size:11px;opacity:.62;margin-top:1px}
+.sha{margin-top:12px;font-size:11.5px;color:#8e8e93}
+.sha summary{cursor:pointer}
+.sha p{margin-top:8px;line-height:1.5}
+.sha code{font-family:ui-monospace,Menlo,monospace;font-size:10.5px;word-break:break-all;color:#6e6e73}
+h3{font-size:15px;font-weight:700;margin:30px 0 10px}
+ol.steps{padding-left:18px;font-size:13px;color:#3a3a3c}
+ol.steps li{margin-bottom:9px}
+ol.steps b{font-weight:650}
+code.inline{background:#eaeaef;border-radius:4px;padding:1px 5px;font-family:ui-monospace,Menlo,monospace;font-size:11.5px}
+.tip{background:#fff;border:1px solid #eaeaef;border-radius:12px;padding:13px 15px;font-size:12.5px;color:#48484a;line-height:1.7}
+.tip b{color:#1d1d1f}
+.contact{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid #eaeaef;border-radius:14px;padding:14px}
+.contact .qr{width:106px;height:106px;border-radius:9px;border:1px solid #f0f0f3;flex:0 0 auto}
+.contact b{display:block;font-size:14px;font-weight:650;margin-bottom:4px}
+.contact p{font-size:12.5px;color:#6e6e73;line-height:1.6}
+.contact a{color:#0a84ff;text-decoration:none}
+@media(max-width:420px){.contact{flex-direction:column;align-items:flex-start}}
+.feat{margin:18px 0 6px;font-size:12.5px;color:#48484a}
+.feat summary{cursor:pointer;background:#fff;border:1px solid #eaeaef;border-radius:12px;padding:11px 14px;font-weight:600;font-size:13px;color:#1d1d1f;list-style:none}
+.feat summary::-webkit-details-marker{display:none}
+.feat summary::after{content:"＋";float:right;color:#8e8e93;font-weight:400}
+.feat[open] summary::after{content:"－"}
+.feat[open] summary{border-radius:12px 12px 0 0;border-bottom-color:#f2f2f5}
+.feat-grid{background:#fff;border:1px solid #eaeaef;border-top:none;border-radius:0 0 12px 12px;padding:4px 16px 14px;display:grid;grid-template-columns:1fr 1fr;gap:0 22px}
+@media(max-width:620px){.feat-grid{grid-template-columns:1fr}}
+.feat-col h4{font-size:11.5px;font-weight:700;color:#8e8e93;margin:14px 0 6px;letter-spacing:.02em}
+.feat-col dl{margin:0}
+.feat-col dt{font-size:12.5px;font-weight:650;color:#1d1d1f;margin-top:9px}
+.feat-col dd{font-size:12px;color:#6e6e73;line-height:1.6;margin:1px 0 0}
+.feat-col dd code{font-size:11px}
+.feat-note{background:#fff;border:1px solid #eaeaef;border-top:none;border-radius:0 0 12px 12px;padding:0 16px 14px;margin:0;font-size:11.5px;color:#8e8e93}
+.feat[open] .feat-note{border-radius:0}
+.foot{font-size:11.5px;color:#a0a0a5;margin-top:34px;line-height:1.8;border-top:1px solid #eaeaef;padding-top:14px}
+.foot a{color:#8e8e93;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a class="back" href="/">← 返回官网</a>
+    <div class="brand"><img src="/oyster-logo.png" alt="">蚝历批量办公</div>
+  </div>
+
+  <div class="head">
+    <span class="badge">内部测试版 · 1.6.13</span>
+    <h1>几百份 Word 和 Excel，<br>批量生成、批量修改。</h1>
+    <p class="sub">两个本地小软件，只干「批量」这一件事：批量生成、批量修改。一份模板配一张 Excel，生成几百份文档；几百份文档里的文字、格式、行高列宽，一次改完。它不是来替代 Word 和 Excel 的，是替你把那几百次重复点击干完。全部在自己的电脑上跑，不登录、不上传、断网也能用，文件不出这台电脑，安全不泄密。</p>
+  </div>
+
+  <div class="safe">
+    <div><b>文件不出本机</b><span>不登录、不上传、断网也能用。合同、名单、工资表这类有保密要求的东西，放心成批处理</span></div>
+    <div><b>只做批量</b><span>不替代 Word 和 Excel：不做排版编辑，只把那几百次重复点击干完</span></div>
+    <div><b>原件不动</b><span>结果另存到「批量输出」，原文件不改</span></div>
+  </div>
+
+  
+    <section class="app">
+      <div class="app-head">
+        <img class="app-icon" src="/download/office/icon-word.png" alt="" style="background:#eef3ff">
+        <div>
+          <h2>蚝历批量办公 Word</h2>
+          <p class="app-ver">版本 1.6.13 · 2026-11-23 · 本地运行</p>
+        </div>
+      </div>
+      <p class="app-intro">批量生成：一个 Excel 配一个 Word 模板，一行数据一份文档，几百份批量出。批量修改：整批改文字、统一格式、设标题、删空白页、批量改文件名、批量转 PDF，都在本机。</p>
+      <ul class="chips"><li>批量生成文档</li><li>批量合并成一个文档</li><li>同结构批量合内容</li><li>批量编辑文字</li><li>批量查找</li><li>批量删除内容</li><li>批量删空行</li><li>批量删空白页</li><li>批量统一格式</li><li>批量设标题</li><li>批量改文件名</li><li>批量调图片</li><li>批量转 PDF</li><li>批量转 TXT</li><li>旧格式升级</li><li>批量打印</li></ul>
+      <div class="downloads">
+        
+        <a class="dl" href="https://oyster111.top/download/office/haoli-office-word-1.6.13-arm64.zip" download>
+          <span class="dl-main">下载 macOS 版</span>
+          <span class="dl-sub">Apple 芯片 / macOS 11+ · 解压即用 · 3.3 MB</span>
+        </a>
+        
+        <a class="dl" href="https://oyster111.top/download/office/haoli-office-word-1.6.13-win-x64.zip" download>
+          <span class="dl-main">下载 Windows 版</span>
+          <span class="dl-sub">Windows 10 / 11 · 64 位 · 免安装 · 5.9 MB</span>
+        </a>
+      </div>
+      <details class="sha">
+        <summary>校验码（SHA-256）</summary>
+        <p><b>macOS</b><br><code>2fa1e585cee6ef4b3391dbeeb05a48123bb158f30f1117f4cbb49e5ec0429b03</code></p>
+        <p><b>Windows</b><br><code>6fc9d772efc117ed58f187a3640db00bf76c4e43c7b9c778d5732a6608447895</code></p>
+      </details>
+    </section>
+  
+    <section class="app">
+      <div class="app-head">
+        <img class="app-icon" src="/download/office/icon-excel.png" alt="" style="background:#eaf7f0">
+        <div>
+          <h2>蚝历批量办公 Excel</h2>
+          <p class="app-ver">版本 1.6.13 · 2026-11-23 · 本地运行</p>
+        </div>
+      </div>
+      <p class="app-intro">批量拆分：按某一列把一个总表拆成几十个文件。批量合并：几十张表合成一张。批量修改：整批替换文字、统一行高列宽、批量转 PDF。样式和列宽原样保留。</p>
+      <ul class="chips"><li>批量拆分（一拆多）</li><li>批量合并（多合一）</li><li>批量修改</li><li>批量设行高列宽</li><li>批量转 PDF</li><li>批量改文件名</li><li>旧格式升级</li></ul>
+      <div class="downloads">
+        
+        <a class="dl" href="https://oyster111.top/download/office/haoli-office-excel-1.6.13-arm64.zip" download>
+          <span class="dl-main">下载 macOS 版</span>
+          <span class="dl-sub">Apple 芯片 / macOS 11+ · 解压即用 · 3.3 MB</span>
+        </a>
+        
+        <a class="dl" href="https://oyster111.top/download/office/haoli-office-excel-1.6.13-win-x64.zip" download>
+          <span class="dl-main">下载 Windows 版</span>
+          <span class="dl-sub">Windows 10 / 11 · 64 位 · 免安装 · 5.9 MB</span>
+        </a>
+      </div>
+      <details class="sha">
+        <summary>校验码（SHA-256）</summary>
+        <p><b>macOS</b><br><code>63e0036ddef0f75764414ca42342ce1ca67fdbd729a2f40ffd661c5a9d26f14d</code></p>
+        <p><b>Windows</b><br><code>027c175b7a9a4eb4eb43219dbe69e098165cd8f397c4e5c5119b994185900ba2</code></p>
+      </details>
+    </section>
+
+  <div class="tip" style="margin-top:14px">
+    <b>它不是另一个 Word。</b>不做排版、不做编辑、不搞协作、不联网、不登录。它只干一件事：把几百份文件里那些重复的动作，一次性批完。<br>
+    <b>谁适合用：</b>手里有几百份合同、通知、名单、报表，要按模板批量生成、要整批改字改格式、要拆要合，而资料又不能往外传的人。
+  </div>
+
+  <details class="feat">
+    <summary>每个功能具体做到什么（点开看全 22 项）</summary>
+    <div class="feat-grid">
+      <div class="feat-col">
+        <h4>Word</h4>
+        <dl>
+          <dt>批量生成文档</dt><dd>模板里写 <code class="inline">{{字段名}}</code>，Excel 一行生成一份。选好 Excel 自动读表头填文件名规则，点表头加字段，前后缀自己打。字体、表格、页眉页脚全跟模板一样。</dd>
+          <dt>批量合并成一个文档</dt><dd>几份拼成一份，每份从新页开始。图片、样式、列表编号各自保留不串号。</dd>
+          <dt>同结构文档批量合内容</dt><dd>结构一样的几份，把各自填的内容并到第一份里。格式沿用骨架。</dd>
+          <dt>批量编辑文字</dt><dd>整批替换或删除，加粗下划线表格在原位。被拆成几段排版的词也能换。</dd>
+          <dt>批量查找</dt><dd>查一个词出现在这批文档的哪几份里，可一次查多个词。结果直接列在界面上：是否包含、每词命中数、命中在正文还是页眉页脚、首次出现的上下文，同时另存一份 Excel。原文档一个字节不动。</dd>
+          <dt>批量删除内容</dt><dd>删指定的字（只删这几个字），或按文字删整段，或删掉所有图片、所有表格。</dd>
+          <dt>批量删空行</dt><dd>清模板留下的空段落，图片和分页符不误删。</dd>
+          <dt>批量删空白页</dt><dd>删分页符后的空段和文末空段。分章用的分页符保留，两章不会被挤到一页。</dd>
+          <dt>批量统一格式</dt><dd>字体、字号、行距、首行缩进、对齐一次套齐。标题和表格默认不动。</dd>
+          <dt>批量设标题</dt><dd>按编号认出一二三级标题，写进大纲。导航窗格能用，自动目录能生成。</dd>
+          <dt>批量改文件名</dt><dd>统一加前后缀，编号可选（默认不加），或按对照表改。重名自动加 (2)，不覆盖。</dd>
+          <dt>批量调图片尺寸</dt><dd>只改显示大小，原图不重新压缩，清晰度不掉。</dd>
+          <dt>批量转 PDF</dt><dd>每份跟 Word 里看到的一样，字体不乱、分页不乱。</dd>
+          <dt>批量转 TXT</dt><dd>只取文字。一行表格一行文字，单元格用制表符，表格内容不丢。</dd>
+          <dt>批量升级旧格式</dt><dd>.doc / .wps / .rtf 另存成 .docx，老文件不动。</dd>
+          <dt>批量打印</dt><dd>一份份送进打印队列，不用逐个打开按 Ctrl+P。</dd>
+        </dl>
+      </div>
+      <div class="feat-col">
+        <h4>Excel</h4>
+        <dl>
+          <dt>批量拆分（一拆多）</dt><dd>按一列或多列组合拆成多个文件，表头每份都带着。</dd>
+          <dt>批量合并（多合一）</dt><dd>几十张拼成一张，表头只留一次。列宽、颜色、合并单元格原样。</dd>
+          <dt>批量修改</dt><dd>整批替换、删空行、去首尾空格。公式和样式不动。</dd>
+          <dt>批量设行高列宽</dt><dd>统一设值，或按内容自适应。中文按两个字符宽算，不挤成两行。</dd>
+          <dt>批量转 PDF</dt><dd>版式和打印预览一致，用来发送、存档、签字。</dd>
+          <dt>批量改文件名</dt><dd>同 Word 版，重名自动加 (2)。</dd>
+          <dt>批量升级旧格式</dt><dd>.xls / .et / .csv 另存成 .xlsx。</dd>
+        </dl>
+      </div>
+    </div>
+    <p class="feat-note">装上之后，软件里首页底部有「使用说明」，每个功能都写了怎么用、做到什么。</p>
+  </details>
+
+  <h3>装之前要知道三件事</h3>
+  <ol class="steps">
+    <li><b>macOS 第一次打开会提示「无法验证开发者」。</b>还没买苹果开发者签名，系统会拦一下，放行一次就一劳永逸。两种办法任选：
+      <br>① 点「完成」，打开 <b>系统设置 → 隐私与安全性</b>，拉到底部找到「蚝历批量办公」被拦的提示，点<b>「仍要打开」</b>；
+      <br>② 或在终端执行一次（复制整行，注意 App 名）：<br><code class="inline">xattr -dr com.apple.quarantine "/Applications/蚝历批量办公 Word.app"</code>
+      <br>Excel 版同理，把名字里的 Word 换成 Excel。</li>
+    <li><b>Windows 会提示「未知发布者」。</b>点「更多信息」→「仍要运行」。下载的是 zip，解压到任意目录，
+      双击里面的 exe 就能用，不写注册表、不装服务。</li>
+    <li><b>转 PDF / 打印 / 旧格式升级 这 3 个功能需要安全开源免费的 LibreOffice 引擎。</b>
+      第一次点这三项，程序会问一句「转 PDF / 打印 / 旧格式升级 这 3 个功能需要安全开源免费的 LibreOffice 引擎，是否帮你自动安装？」，点「是，帮我装」就自己下、自己装，不用你去官网找。
+      约 290 MB，走国内镜像，1–2 分钟，装一次长期有效。<b>不装也能用其它所有功能。</b></li>
+  </ol>
+
+  <h3>为什么这个包只有几兆？以前不是一百多兆吗？</h3>
+  <div class="tip">
+    <b>换架构重写了。</b>以前每个包都得自带一整份浏览器内核，所以动不动一百多兆——那不是我们的代码，是壳。
+    现在换成系统的浏览器内核（Windows 用自带的 WebView2，Mac 用自带的 WKWebView），壳只有几兆。<br><br>
+    <b>Mac 版 3 MB 出头，Windows 版 6 MB 不到。</b>我们自己的全部业务代码打包后不到 1 MB。
+    秒下、秒开，断网照样用。LibreOffice 还是没塞进包里，只有点「是，帮我装」时才下载（约 290 MB，国内镜像，装一次长期有效）。<br><br>
+    <b>功能一个没少。</b>Word 16 项、Excel 7 项全在，原来的文件拖进来还那么处理。
+  </div>
+
+  <h3>为什么可以放心把文件交给它</h3>
+  <div class="tip">
+    <b>不读成数据再重建。</b>大多数工具会把 docx/xlsx 读成对象、改完再写回去——格式就是这一步丢的。
+    这里是直接拆开文件，只改命中的那几个字符，其它部分一个字节不碰。<br><br>
+    <b>不上传。</b>两个本地小软件，只干「批量」这一件事：批量生成、批量修改。一份模板配一张 Excel，生成几百份文档；几百份文档里的文字、格式、行高列宽，一次改完。它不是来替代 Word 和 Excel 的，是替你把那几百次重复点击干完。全部在自己的电脑上跑，不登录、不上传、断网也能用，文件不出这台电脑，安全不泄密。 没有后端。唯一的网络请求是你主动点「是，帮我装」时去下载 LibreOffice。<br><br>
+    <b>不覆盖原件。</b>所有结果写到源文件旁边的「批量输出」文件夹，出问题最多是这个文件夹里的东西不对，原件永远在。
+  </div>
+
+  <h3>这是内测版</h3>
+  <div class="tip">
+    功能是按真实需求一点点长出来的，不是拍脑袋列的。你手上那批文件如果处理得不对、或者卡在哪一步，
+    直接把问题、截图、以及能脱敏的那份文件发我微信。改完我重新打包，链接不变。
+  </div>
+
+  <h3>怎么找我</h3>
+  <div class="contact">
+    <img class="qr" src="/download/office/qr-wechat.png" alt="微信公众号二维码">
+    <div>
+      <b>微信搜一搜「蚝历四季」</b>
+      <p>装上用着不对、哪个功能不好使、想要什么功能，扫码关注后直接留言。看到就回。</p>
+      <p>官网 <a href="https://oyster111.top/">oyster111.top</a></p>
+    </div>
+  </div>
+
+  <div class="foot">
+    蚝历办公 · <a href="https://oyster111.top/">oyster111.top</a> · 本页为内部测试链接，未做搜索收录<br>
+    处理全程在本机完成，本页不放任何统计脚本。<br>
+    软件按现状免费提供。批量处理会改内容，动手前请自己留一份备份，结果出来抽查几份再用。
+  </div>
+</div>
+</body>
+</html>
