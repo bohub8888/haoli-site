@@ -1,0 +1,15 @@
+{
+  "generated": "2026-11-20T10:16:14+08:00",
+  "kind": "data-hot-update",
+  "app_version_changed": false,
+  "changed": [],
+  "auto_sync": [],
+  "manual": [],
+  "purge": [],
+  "server": [],
+  "versions": {
+    "2026": "2026.22",
+    "2027": "2027.22"
+  },
+  "note": "本次不动 apk.json / download/ / versionCode / 蒲公英；老用户由 App UpdateManager 热更新获取新数据。"
+}

@@ -11,17 +11,30 @@
 <meta property="og:title" content="2026–2027 节假日日历 · 放假安排与调休">
 <meta property="og:description" content="中国 + 全球 62 国节假日，点击按钮就能导入你的手机日历。">
 <meta property="og:url" content="https://oyster111.top/">
-<meta property="og:image" content="https://oyster111.top/oyster-logo.png">
+<meta property="og:image" content="https://oyster111.top/og-x-en.png">
 <link rel="icon" href="oyster-logo.png">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",sans-serif;background:#f5f5f7;color:#1d1d1f;line-height:1.6;-webkit-font-smoothing:antialiased}
 .wrap{max-width:520px;margin:0 auto;padding:0 16px 40px}
-.brand{display:flex;align-items:center;gap:10px;padding:28px 0 6px}
+.brand{display:flex;align-items:center;gap:10px;padding:14px 0 0}
 .brand img{width:40px;height:40px;border-radius:10px}
 .brand .name{font-size:22px;font-weight:800;letter-spacing:-0.02em;display:flex;align-items:baseline;flex-wrap:wrap}
-.brand .name span{color:#ff6b35;font-size:14px;letter-spacing:0}
 .tagline{font-size:13px;color:#8e8e93;margin-bottom:10px;padding-left:50px}
+/* 蚝历办公入口条：首页顶部的矩形，点进去是 /haoli-office.html */
+.ob{display:flex;align-items:center;gap:11px;margin:8px 0 10px;padding:10px 12px;background:#fff;border:1px solid #eaeaef;border-radius:14px;box-shadow:0 1px 3px rgba(0,0,0,.05);text-decoration:none;color:inherit;transition:transform .15s,box-shadow .15s,border-color .15s}
+.ob:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.08);border-color:#ffd6c6}
+.ob-icons{display:flex;flex:0 0 auto;align-items:center}
+.ob-icons img{width:34px;height:34px;border-radius:9px;display:block;background:#fff;box-shadow:0 0 0 2px #fff,0 0 0 3px #ececf1}
+.ob-icons img+img{margin-left:-6px}
+.ob-body{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:2px}
+.ob-title{font-size:13.5px;font-weight:750;letter-spacing:-0.01em;line-height:1.4}
+.ob-title br{display:none}
+.ob-sub{font-size:11.5px;color:#6e6e73;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ob-meta{font-size:10.5px;color:#8e8e93;font-variant-numeric:tabular-nums;margin-top:1px}
+.ob-go{flex:0 0 auto;color:#ff6b35;font-size:19px;font-weight:600;line-height:1;padding-left:1px}
+@media(max-width:600px){.ob-title br{display:inline}}
+@media(max-width:420px){.ob-sub{-webkit-line-clamp:3}.ob-title{font-size:13px}}
 
 /* 年份切换：上一年在左，下一年在右 */
 .yearnav{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;min-height:26px}
@@ -32,8 +45,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
 .hero{display:flex;align-items:center;gap:10px 12px;flex-wrap:wrap}
 .hero-main{flex:1 1 0;min-width:0}
 .hero-aside{flex:0 0 auto;display:flex;flex-direction:column;gap:6px}
-.hero h1{font-size:25px;font-weight:800;letter-spacing:-0.02em;margin-bottom:6px;line-height:1.25}
-.hero p{font-size:13px;color:#6e6e73;line-height:1.45}
+.hero h1{display:flex;align-items:center;gap:10px;font-size:22px;font-weight:800;letter-spacing:-0.02em;margin-bottom:3px;line-height:1.15}
+.hero h1 img{width:40px;height:40px;border-radius:10px;flex:0 0 auto;display:block}
+.hero p{font-size:12.5px;color:#6e6e73;line-height:1.5}
+.hero p .nw{white-space:nowrap}
 .hero-banner{flex:0 0 auto;display:flex;align-items:center;gap:8px;background:#fff;border-radius:12px;padding:8px 12px 8px 8px;text-decoration:none;color:inherit;box-shadow:0 1px 3px rgba(0,0,0,.06);border:1px solid #eaeaef;transition:transform .15s,box-shadow .15s}
 .hero-banner:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.09)}
 .hero-banner .hb-icon{width:32px;height:32px;border-radius:8px;flex:0 0 auto;display:block}
@@ -138,7 +153,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
 .mitem a:hover{text-decoration:underline}
 
 @media (max-width:400px){
-  .hero h1{font-size:21px}
+  .hero h1{font-size:18px;gap:8px}
+  .hero h1 img{width:34px;height:34px;border-radius:9px}
   .hero-aside{flex-direction:row;width:100%;gap:6px}
   .hero-aside .hero-banner{flex:1 1 0;min-width:0}
   .hero-banner{padding:6px 9px 6px 6px;gap:6px}
@@ -147,8 +163,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
   .hero-banner .hb-text small{font-size:9px}
   .hero-banner .hb-tag{font-size:8px;padding:0 3px}
   .hero-banner .hb-ver{font-size:8px;margin-left:3px}
+  .brand img{width:34px;height:34px;border-radius:9px}
   .brand .name{font-size:18px}
-  .brand .name span{font-size:12px}
 }
 </style>
 <script type="application/ld+json">
@@ -198,16 +214,28 @@ body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue"
 
   <header class="brand">
     <img src="oyster-logo.png" alt="蚝历 logo">
-    <div class="name">蚝历<span>.节假日纪念日日历大全</span></div>
+    <div class="name">蚝历批量办公</div>
   </header>
-  <div class="tagline">每一天的好日子 Everyday Holiday</div>
+  <!-- 蚝历办公：本地批量处理 Word / Excel（不在包内、不上传），点进去是产品页 -->
+  <a class="ob" href="/haoli-office.html">
+    <span class="ob-icons" aria-hidden="true">
+      <img src="/download/office/icon-word.png" alt="">
+      <img src="/download/office/icon-excel.png" alt="">
+    </span>
+    <span class="ob-body">
+      <span class="ob-title">蚝历批量办公，几百份 Word 和 Excel，<br>批量生成和修改。</span>
+      <span class="ob-sub">只干「批量」这一件事。不替代 Word 和 Excel，是替你把几百次重复点击干完。文件不出本机，安全不泄密。</span>
+      <span class="ob-meta">Word 16 项 · Excel 7 项 · 几兆、断网可用</span>
+    </span>
+    <span class="ob-go" aria-hidden="true">›</span>
+  </a>
 
 
 
   <div class="hero">
     <div class="hero-main">
-      <h1>2026–2027 节假日日历</h1>
-      <p>中国 + 全球 62 国 · 导入手机日历，或订阅自动更新</p>
+      <h1><img src="oyster-logo.png" alt="蚝历日历">蚝历日历</h1>
+      <p><span class="nw">节假日纪念日日历大全。</span><wbr>2026–2027 节假日日历<span class="nw">订阅</span><wbr>和导入<span class="nw">手机电脑</span>。<wbr><span class="nw">中国 + 全球 62 国。</span></p>
     </div>
     <div class="hero-aside">
     <a class="hero-banner" href="https://oyster111.top/download/bjwh.html">
