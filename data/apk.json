@@ -1,10 +1,10 @@
 {
-  "version": "1.74",
-  "versionCode": 74,
-  "size": 1746979,
-  "sha256": "939eacd599e45025ef8b26a200c757190f4bb1ffdf07626c111842fa627e4b18",
-  "url": "https://oyster111.top/download/haoli-1.74.apk",
-  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.74.apk",
+  "version": "1.75",
+  "versionCode": 75,
+  "size": 1748383,
+  "sha256": "c6f5e72c52e8c627b963dec05e5f5f2d927f034f0a715f22940ecb9235017dd1",
+  "url": "https://oyster111.top/download/haoli-1.75.apk",
+  "mirror": "https://cdn.jsdelivr.net/gh/bohub8888/haoli-site@main/download/haoli-1.75.apk",
   "pgyer": "https://www.pgyer.com/haoli-android",
-  "notes": "小组件截断容量 6→7 字：4×2 标准、4×2 流水、2×1 多条态长节日名最多多显示一个字；「N天后」小字自适应防截断。"
+  "notes": "当天多条节日的展示排序调整为：中国 → 美国 → 国际 → 其他国家（小组件、网站、产品页同步）；修复广交会（春季）流水卡长名显示。"
 }
