@@ -978,8 +978,8 @@ document.addEventListener('click', function (e) {
 
   /* v1.62：当天条目展现顺序 —— 节日在前，会议 / 展会垫底（稳定排序，组内保持数据原序）。 */
   function isMeeting(e) { return /^(会议|展会)\s*·/.test(e.t); }
-  /* v1.66：主序节日/会议，次序 中国 → 国际 → 其他国家。g 由 build.py 与 App
-     的 WidgetRender.regionRank 同源算出，前端不靠猜名称。 */
+  /* v1.75：主序节日/会议，次序 中国 → 美国 → 国际 → 其他国家。g 由 build.py 与
+     App 的 WidgetRender.regionRank 同源算出，前端不靠猜名称。 */
   function regionOfEv(e) {
     if (typeof e.g === 'number') return e.g;
     var t = e.t || '', i = t.indexOf('·');
@@ -987,12 +987,13 @@ document.addEventListener('click', function (e) {
     var body = i > 0 ? t.slice(i + 1) : t;
     if (head === '会议' || head === '展会') {
       if (/中国|全国|两会|政协|人大|博鳌/.test(body)) return 0;
-      if (/世界|国际|全球/.test(body)) return 1;
-      return 2;
+      if (/世界|国际|全球/.test(body)) return 2;
+      return 3;
     }
     if (head.indexOf('中国') === 0) return 0;
-    if (head === '国际') return 1;
-    return 2;
+    if (head === '美国') return 1;
+    if (head === '国际') return 2;
+    return 3;
   }
   function orderEvs(list) {
     return list.map(function (e, i) { return { e: e, i: i }; })
